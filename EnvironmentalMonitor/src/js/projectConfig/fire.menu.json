@@ -1,0 +1,31 @@
+[
+    {
+        "name":"环境监控",
+        "key":"environment",
+        "visible":1,
+        "devices":[
+            {"name":"剩余电流","key":"Surplus","visible":1},
+            {"name":"温湿度","key":"temperatureAndHumidity","visible":1}
+        ]
+    },
+    {
+        "name":"安防监控",
+        "key":"security",
+        "visible":1,
+        "devices":[
+            {"name":"电气火灾","key":"Electrical","visible":1}
+        ]
+    },
+    {
+        "name":"系统监控",
+        "key":"system",
+        "visible":1,
+        "devices":[
+            {"name":"日志管理","key":"journal","visible":1},
+            {"name":"设备管理","key":"device","visible":1},
+            {"name":"用户管理","key":"administrator","visible":1},
+            {"name":"资产管理","key":"property","visible":1},
+            {"name":"服务器","key":"server","visible":1}
+        ]
+    }
+]

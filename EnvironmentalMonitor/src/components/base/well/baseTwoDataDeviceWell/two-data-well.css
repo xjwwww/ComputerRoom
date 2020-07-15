@@ -1,0 +1,90 @@
+.two-data-well{
+	display: inline-block;
+	width: 240px;
+	margin: 10px 10px;
+	border: 1px solid #d7dae2;
+	border-radius: 4px;
+	background-color: rgb(250, 250, 250);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.two-data-well__value-circle{
+	position: relative;
+	width: 100%;
+	height: 220px;
+    padding: 10px 0;
+	text-align: center;
+}
+
+.two-data-well__icon{
+    position: absolute;
+    top: 74px;
+    width: 100%;
+    text-align: center;
+}
+
+.two-data-well__device-name{
+	position: absolute;
+	overflow-x: hidden;
+	top: 120px;
+	width: 100%;
+	font-size:20px;
+	color:rgba(153,153,153,1);
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.two-data-well__device-name.two-data-well__device-name_status_alarm{
+	color:#FFA8A8;
+}
+
+.two-data-well__data-container{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 45px;
+}
+
+.two-data-well__data{
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+
+.two-data-well__flag{
+	display: inline-block;
+	width:12px;
+	height:12px;
+	border-radius:6px;
+}
+
+.two-data-well__key{
+	display: inline-block;
+    margin-bottom: 6px;
+	padding: 0 5px;
+	font: 16px Microsoft YaHei,sans-serif;
+	line-height: 16px;
+}
+
+.two-data-well__value{
+	/* padding: 0 40px; */
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.two-data-well__value.two-data-well__value_status_alarm{
+	line-height: 20px;
+	font-size: 20px;
+	color: red;
+	background: url(./img/alarm.png) 18px 0 no-repeat;
+}
+
+.two-data-well__footer{
+	width: 100%;
+	text-align: center;
+	font: 20px "Microsoft YaHei",sans-serif;
+	line-height: 1.7;
+	overflow-x: hidden;
+	text-overflow:ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,62 @@
+.central-ac-device-well{
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    margin: 0.3125em 0;
+    padding: 0.625em;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.central-ac-device-well__header{
+    font-size: 1.125em;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.central-ac-device-well__content{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.central-ac-device-well__data{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.625em;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.central-ac-device-well__data::before{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.625em;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.central-ac-device-well__data:nth-child(1)::before{
+    background: #4CBF52;
+}
+
+.central-ac-device-well__data:nth-child(2)::before{
+    background: #806CEE;
+}
+
+.central-ac-device-well__k{
+    flex: 1;
+}
+
+.central-ac-device-well__status{
+    color: #5097FF;
+}
+
+.central-ac-device-well__status_alarm{
+    color: #FFA549;
+}

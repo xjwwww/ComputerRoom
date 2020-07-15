@@ -1,0 +1,78 @@
+.precision-running-status-well{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25%;
+    /* height: 100%; */
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.running-status-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* height: 14%; */
+    padding: 0 15px;
+    font-size: 1em;
+    line-height: 1.7;
+}
+
+.running-status-row__key{
+    /* display: inline-block;
+    position: absolute;
+    left: 15px; */
+}
+
+
+.running-status-row__key::before{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.running-status-row:nth-child(1) .running-status-row__key::before{
+    background-color: #73D595;
+}
+
+.running-status-row:nth-child(2) .running-status-row__key::before{
+    background-color: #8693F3;
+}
+
+.running-status-row:nth-child(3) .running-status-row__key::before{
+    background-color: #FEC42B;
+}
+
+.running-status-row:nth-child(4) .running-status-row__key::before{
+    background-color: #BC8CEF;
+}
+
+.running-status-row:nth-child(5) .running-status-row__key::before{
+    background-color: #FFA897;
+}
+
+.running-status-row:nth-child(6) .running-status-row__key::before{
+    background-color: #9987F2;
+}
+
+.running-status-row:nth-child(7) .running-status-row__key::before{
+    background-color: rgb(203,168,94);
+}
+
+.running-status-row__value{
+    /* display: inline-block;
+    position: absolute;
+    right: 15px; */
+    color: #5786EEFF;
+}
+
+.running-status-row__value_stop{
+    color: #999999FF;
+}

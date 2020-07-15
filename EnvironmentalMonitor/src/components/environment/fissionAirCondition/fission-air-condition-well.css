@@ -1,0 +1,115 @@
+.fission-ac-well{
+    /* width: 32%;
+    max-width: 390px;
+    min-width: 240px; */
+    width: 20em;
+    /* height: 190px; */
+    margin: 0 .5% .625em .5%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.fission-ac-well__head{
+    /* height: 25px; */
+    line-height: 1.5;
+    font-size: 1.125em;
+    font-weight: bold;
+}
+
+.fission-ac-well__subhead{
+    /* height: 25px; */
+    line-height: 1.5;
+    font-size: 1em;
+    font-weight: lighter;
+    color:rgba(153,153,153,1);
+}
+
+.fission-ac-well__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fission-ac-well__operate-row{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    /* height: 30px;
+    margin-top: 8px; */
+    line-height: 2.2;
+    padding: 0 .625em;
+}
+
+.fission-ac-well__operate-name{
+    /* position: absolute;
+    left: .625em; */
+    font-size: 1em;
+    /* line-height: 30px; */
+    color: #666666FF;
+}
+
+.fission-ac-switch{
+    /* position: absolute;
+    right: .625em; */
+    align-self: center;
+    position: relative;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	width: 110px;
+	height: 28px;
+	background-color: #F0F7FF;
+	border-radius: 30px;
+}
+
+.fission-ac-switch__condition{
+	position: absolute;
+	top: 0;
+	width:50%;
+	height: 100%;
+	font-size: 14px;
+	text-align: center;
+	line-height: 28px;
+	color: #2488FF;
+}
+
+.fission-ac-switch__condition_active{
+	color: white;
+}
+
+.fission-ac-switch__ball{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	border-radius: 30px;
+	transition: left .5s,background-color .5s;
+}
+
+.fission-ac-switch__ball_close{
+	left: 0;
+	background-color: #999999;
+}
+
+.fission-ac-switch__ball_open{
+	left: 50%;
+	background-color: #2488FF;
+}
+
+.fission-ac-button{
+    /* position: absolute;
+    right: 10px; */
+    margin-right:10px; 
+}
+
+.fission-ac-well__button-row{
+    display: flex;
+    justify-content: flex-end;
+    /* position: relative; */
+    /* height: 30px;
+    margin-top: 8px; */
+    line-height: 1.8;
+    padding: 0 .625em;
+}

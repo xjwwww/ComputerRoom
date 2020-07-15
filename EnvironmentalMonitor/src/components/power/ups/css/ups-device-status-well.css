@@ -1,0 +1,54 @@
+.ups-device-status-well{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.ups-device-status-well__title{
+    /* height: 30px; */
+    padding-left:20px; 
+    font-size: 1.125em;
+    font-weight: 600;
+}
+
+.ups-device-status-content{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    /* height: calc(100% - 30px); */
+    flex-grow: 1;
+}
+
+.ups-device-status-row{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 20px;
+    /* height: 20px; */
+    font-size: 1em;
+}
+
+.ups-device-status-row:nth-child(odd){
+    background-color: white;
+}
+
+.ups-device-status-row:nth-child(even){
+    background-color: #EEF5FB;
+}
+
+.ups-device-status-row__key{
+    /* position: absolute;
+    left: 30px;
+    line-height: 20px; */
+}
+
+.ups-device-status-row__value{
+    /* position: absolute;
+    right: 30px;
+    line-height: 20px; */
+    color: #5097FF;
+}

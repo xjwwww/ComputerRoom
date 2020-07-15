@@ -1,0 +1,53 @@
+.precision-condition-well{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    min-height: 250px;
+    max-height: 365px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.precision-condition-well__head{
+    /* height: 25px; */
+    padding-left: 20px;
+    /* line-height: 25px; */
+    font-size: 1.125em;
+    font-weight:600; 
+}
+
+.precision-condition-well__subhead{
+    /* height: 25px; */
+    padding-left: 20px;
+    /* line-height: 25px; */
+    font-size: 1em;
+    color:rgba(153,153,153,1);
+    font-weight: 300;
+}
+
+.precision-condition-well__content{
+    display: flex;
+    justify-content:space-around;
+    flex-grow: 1;
+    /* height: calc(100% - 50px); */
+    /* min-height: 200px;
+    max-height: 315px; */
+    font-size: 1em;
+}
+
+.precision-data-well{
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.precision-data-well_data_running-status{
+    width: 28%;
+}
+
+.precision-data-well_data_alarm-status{
+    width: 38%;
+}

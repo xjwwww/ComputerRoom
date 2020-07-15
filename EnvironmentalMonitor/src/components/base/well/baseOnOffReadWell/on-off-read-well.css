@@ -1,0 +1,105 @@
+.on-off-read-well{
+	position: relative;
+	display: inline-block;
+	width: 240px;
+	margin: 10px 10px;
+	border: 1px solid #d7dae2;
+	border-radius: 4px;
+	padding-top:15px;
+	background-color: rgba(250,250,250,1);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+
+.on-off-read-well__content{
+	position: relative;
+	width:100%;
+	height:200px;
+}
+
+.on-off-read-well__ripple{
+	position: absolute;
+	left:20px;
+	width: 200px;
+	height: 200px;
+	background-color: rgba(224,237,254,1);
+	border-radius: 50%;
+	animation: circle-opacity 2s infinite;
+}
+
+.on-off-read-well__ripple.on-off-read-well__ripple_status_alarm{
+	animation: circle-alarm-opacity 1s infinite;
+}
+
+.on-off-read-well__ripple.on-off-read-well__ripple_status_unconnected{
+	animation: none;
+	border: 26px solid rgba(229,229,229,1);
+}
+
+@keyframes circle-opacity{
+	from {
+		background-color:rgba(78,161,255,1);
+		transform: scale(0.7);
+	}
+	to {
+		background-color: rgba(224,237,254,1);
+		transform: scale(1);
+	}
+}
+
+@keyframes circle-alarm-opacity{
+	from {
+		background-color:rgba(247,120,120,1);
+		transform: scale(0.7);
+	}
+	to {
+		background-color: rgba(254,230,230,1);
+		transform: scale(1);
+	}
+}
+
+.on-off-read-well__round{
+	position: absolute;
+	top: 25px;
+	left: 45px;
+	width:150px;
+	height:150px;
+	border-radius:50%;
+	text-align: center;
+	background:rgba(78,161,255,1) no-repeat center 40px;
+}
+
+.on-off-read-well__round.on-off-read-well__round_status_alarm{
+	background-color: rgba(247,120,120,1);
+}
+
+.on-off-read-well__round.on-off-read-well__round_unconnected{
+	background-color: white;
+}
+
+.on-off-read-well__icon{
+	position: relative;
+	top: 40px;
+}
+
+.on-off-read-well__device-name.on-off-read-well__device-name_unconnected{
+	color: rgba(229,229,229,1);
+}
+
+.on-off-read-well__device-name{
+	position: absolute;
+	overflow-x: hidden;
+	top: 90px;
+	width: 100%;
+	font-size:18px;
+	color: white;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.on-off-read-well__footer{
+	width: 100%;
+	font-size: 20px;
+	line-height: 1.7;
+	text-align: center;
+}

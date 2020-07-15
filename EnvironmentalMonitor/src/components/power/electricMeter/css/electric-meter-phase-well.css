@@ -1,0 +1,97 @@
+.electric-meter-phase-well{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 31%;
+    /* min-height: 125px; */
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.electric-meter-phase-well__title{
+    /* height: 35px; */
+    padding-left: 45px;
+    font-size: 1em;
+    line-height: 2;
+    /* line-height: 35px; */
+    background:  no-repeat left;
+}
+
+.electric-meter-phase-well__title.a-phase{
+    background-image: url(../img/Aphase.png)
+}
+
+.electric-meter-phase-well__title.b-phase{
+    background-image: url(../img/Bphase.png)
+}
+
+.electric-meter-phase-well__title.c-phase{
+    background-image: url(../img/Cphase.png)
+}
+
+.electric-meter-phase-well__content{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    position: relative;
+    /* height: calc(100% - 35px); */
+    padding-top: 10px;
+}
+
+.electric-meter-phase-well__param{
+    /* width: 17%; */
+    /* height: 100%; */
+    flex-grow: 2;
+    text-align: center;
+}
+
+.electric-meter-phase-well__value{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    font-size: 1.125em;
+}
+
+.electric-meter-phase-well__value_alarm,
+.electric-meter-phase-well__key_alarm{
+    color:red;
+}
+
+.electric-meter-phase-well__value.a-phase{
+    color: rgb(134, 147, 243);
+}
+
+.electric-meter-phase-well__value.b-phase{
+    color: rgb(188, 140, 239);
+}
+
+.electric-meter-phase-well__value.c-phase{
+    color: rgb(255, 168, 151);
+}
+.electric-meter-phase-well__value::after{
+    content: attr(data-unit);
+    display: inline;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.electric-meter-phase-well__key{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    line-height: 1.7;
+    font-size: 0.875em;
+}
+
+.electric-meter-phase-well__divider{
+    position: relative;
+    width: 0.1875em;
+    height: 70%;
+    top: 15%;
+    /* margin-top: -20px; */
+    background: rgb(245,245,245);
+}

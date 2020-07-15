@@ -1,0 +1,33 @@
+[
+    {
+        "name":"环境监控",
+        "key":"environment",
+        "visible":1,
+        "devices":[
+            {"name":"冷藏库","key":"PT100","visible":1},
+            {"name":"DS18B20","key":"DS18B20","visible":1},
+            {"name":"负20度以上冰柜","key":"tempAbove20","visible":1},
+            {"name":"负20度以下冰柜","key":"tempBelow20","visible":1}
+        ]
+    },
+    {
+        "name":"动力监控",
+        "key":"power",
+        "visible":1,
+        "devices":[
+            {"name":"市电监控","key":"electricSupply","visible":1}
+        ]
+    },
+    {
+        "name":"系统监控",
+        "key":"system",
+        "visible":1,
+        "devices":[
+            {"name":"日志管理","key":"journal","visible":1},
+            {"name":"设备管理","key":"device","visible":1},
+            {"name":"用户管理","key":"administrator","visible":1},
+            {"name":"资产管理","key":"property","visible":1},
+            {"name":"服务器","key":"server","visible":1}
+        ]
+    }
+]

@@ -1,0 +1,35 @@
+/* 组侧边菜单样式 */
+.ctm-group-sidetree_open{
+    width:200px;
+}
+
+.ctm-group-sidetree_close{
+    width: 15px;
+}
+
+.ctm-table-pagination{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    padding: 4px 15px 0 15px;
+    border-top: 1px solid rgb(223,223,223);
+    background-color: rgb(249,249,249);
+}
+
+.set-amounts{
+    width: 33%;
+    height: 100%;
+    text-align: left;
+}
+
+.show-page{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+}
+
+.change-page{
+    width: 33%;
+    height: 100%;
+    text-align: right;
+}

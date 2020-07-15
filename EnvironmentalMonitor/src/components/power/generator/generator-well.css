@@ -1,0 +1,75 @@
+.generator-well{
+    width: 15em;
+    margin: 0 .5% .625em .5%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.generator-well__icon{
+    width: 1.875em;
+    padding: 5px;
+    box-sizing: content-box;
+    border-radius: 50%;
+}
+
+.generator-well__icon_normal{
+    background:linear-gradient(33deg,rgba(255,203,14,1),rgba(255,231,48,1));
+    box-shadow:0px 3px 3px 0px rgba(255,236,70,0.45);
+}
+
+.generator-well__icon_alarm{
+    background:linear-gradient(33deg,rgba(250,115,65,1),rgba(240,74,8,1));
+    box-shadow:0px 3px 3px 0px rgba(242,82,19,0.45);
+}
+
+.generator-well__icon_unconnected{
+    background:linear-gradient(33deg,rgba(217,217,217,1),rgba(204,204,204,1));
+    box-shadow:0px 3px 3px 0px rgba(204,204,204,0.45);
+}
+
+.generator-well__header{
+    padding:0.5em 0;
+    line-height: 1.5;
+    font-size: 1em;
+}
+
+.generator-well__name{
+    color: #5786EE;
+}
+
+.generator-well__subname{
+    color: rgba(153,153,153,1);
+    font-weight: lighter;
+}
+
+.generator-well__content{
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 19% 27% 27% 27%;
+    align-items: center;
+}
+
+.generator-well__key{
+    font-size: 1em;
+    color: #9097B2;
+}
+
+.generator-well__value{
+    font-size: 1.25em;
+    color: #333333;
+}
+
+.generator-well__value_alarm{
+    color: red;
+}
+
+.generator-well__key::after,
+.generator-well__value::after{
+    display: inline;
+    content: attr(data-unit);
+    font-size: 0.75em;
+}

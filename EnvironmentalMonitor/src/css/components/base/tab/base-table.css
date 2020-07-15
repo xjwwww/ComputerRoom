@@ -1,0 +1,84 @@
+/* 报警查询&设备管理 */
+.ctm-table{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 35px);
+    padding: 5px;
+    font-size: 16px;
+}
+
+.table-operation{  
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid #d7dae2;
+    border-radius: 2px;
+    font-size: 0.875em;
+}
+
+.table-operation__row{
+    display: flex;
+    border-bottom: 1px solid #d7dae2;
+}
+
+.table-operation__row:nth-last-child(1){
+    border-bottom: none;
+}
+
+.table-operation__name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border-right: 1px solid #d7dae2;
+    padding: 0.3125em 0;
+    /* text-align: center; */
+    /* line-height: 1.5; */
+    color: #606266;
+    background-color: rgb(249,249,249);
+}
+
+.table-operation__item{
+    display: flex;
+    align-items: center;
+    padding: 0.3125em 0;
+}
+
+.table-operation__button{
+    width: 85px;
+    height: 28px;
+    margin-left: 18px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+.table-operation__button:hover{
+    opacity: 0.8;
+}
+
+.table-operation__button.table-operation__button_function_refresh{
+    background:rgb(73,210,166);
+}
+
+.table-operation__button.table-operation__button_function_create{
+    background:rgb(78,129,246);
+}
+
+.table-operation__button.table-operation__button_function_export{
+    background:rgb(246,179,127);
+}
+
+.table-operation__button.table-operation__button_function_setting{
+    background:rgb(247, 247, 247);
+}
+
+.ctm-alarm-table>div.el-table.el-table--border{
+    overflow-x:hidden;
+    overflow-y: auto;
+    height: calc(100% - 48px);
+    border-radius:2px; 
+}
+
+.el-table .alarm-row{
+    color: red;
+}

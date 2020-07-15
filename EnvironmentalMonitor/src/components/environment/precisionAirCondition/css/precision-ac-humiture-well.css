@@ -1,0 +1,61 @@
+.precision-humidity-well{
+    display: flex;
+    width: 28%;
+    /* height: 100%; */
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.precision-value-circle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.precision-value-circle__round{
+    position: relative;
+    /* height: 150px; */
+    /* padding-top:20px; */
+}
+
+.temp-canvas{
+    /* position: absolute;
+    top: 50%;
+    margin: -60px auto; */
+    background: url(../img/temperature.png) no-repeat center;
+}
+
+.hum-canvas{
+    background: url(../img/humidity.png) no-repeat center;
+}
+
+.precision-value-circle__footer{
+    /* height: 50px; */
+    /* text-align: center; */
+}
+
+.precision-value-circle__value{
+    /* height: 25px;
+    line-height: 25px; */
+    font-size: 1.125em;
+    line-height: 1.5
+}
+
+.precision-value-circle__value::after{
+	display: inline;
+    content: attr(data-unit);
+    font-size: 14px;
+    color: rgb(153,153,153);
+}
+
+.precision-value-circle__description{
+    /* height: 25px;
+    line-height: 25px; */
+    font-size: 1em;
+    line-height: 1.5
+
+}

@@ -1,0 +1,87 @@
+.ctm-sidetree{
+    position: relative;       
+    border-right: 1px solid rgb(223,223,223);
+    background-color: white;
+    overflow-x:hidden;
+    overflow-y: auto;
+    font-size: 16px;
+}
+
+/* 组侧边菜单样式 */
+.ctm-sidetree.ctm-sidetree_status_open{
+    width: 12.5em;
+}
+
+.ctm-sidetree.ctm-sidetree_status_close{
+    /* width: 15px; */
+    width: 0.9375em;
+}
+
+.ctm-sidetree__status-button{             
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 1000;
+    display: inline-block; 
+    width:15px;
+    /* width: 0.9375em; */
+    height: 30px;
+    /* height: 1.875‬em; */
+    border-left: 1px solid rgb(223,223,223);
+    border-top: 1px solid rgb(223,223,223);
+    border-bottom: 1px solid rgb(223,223,223);
+    background: url(./img/toggle.png) no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.ctm-sidetree__status-button_status_close{
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 
+    -webkit-transform:rotate(180deg); 
+}
+
+.ctm-sidetree__title{
+    width: 100%;
+    /* height: 49px; */
+    height: 2.722em;
+    border-bottom: 1px solid rgb(223,223,223);
+    text-align: center;
+    /* line-height: 49px; */
+    line-height: 2.722em;
+    font-size: 1.125em;
+    font-weight: 600;
+}
+
+.ctm-sidetree__search-keyword{
+    position:relative;       
+    width: 94%;
+    height: 50px;
+    padding:10px 3%;
+    font-size: 0.875em;
+}
+
+.ctm-sidetree__input{
+    width: 100%;        
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;	    		
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgb(223,223,223);
+}
+
+.ctm-sidetree__tree{
+    width: 100%;
+    height: calc(100% - 50px - 50px);
+    overflow-x:hidden;
+    overflow-y: auto;  		
+}
+
+.custom-tree-node{
+    position: relative;
+    width: 100%;
+    font-size: 0.875em;
+    padding-right: 8px;
+}
+

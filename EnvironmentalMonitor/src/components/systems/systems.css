@@ -1,0 +1,73 @@
+.systems-container{
+    display: flex;
+    overflow-x: hidden;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background: url(./img/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+.systems-container__flip{
+    cursor: pointer;
+}
+
+.systems-container__flip:hover{
+    opacity: 0.8;
+}
+
+/* .systems-container__flip_left{
+    left: 0;
+}
+
+.systems-container__flip_right{
+    right: 0;
+} */
+
+.systems-row{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.systems-well{
+    /* display: flex;
+    justify-content: center;
+    flex-shrink: 0; */
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    width: 160px;
+    height: 220px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+    font-size: 16px;
+    text-align: center;
+    transition: width .5s,height .5s;
+    cursor: pointer;
+}
+
+.systems-well:hover,
+.systems-well_selected{
+    width: 180px;
+    height: 240px;
+}
+
+.systems-well__icon{
+    /* position: absolute; */
+    position: relative;
+    top: 20%;
+    -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent 10%,transparent 50%,rgba(255,255,255,0.6));
+}
+
+.systems-well__name{
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    color: white;
+    font-size: 1.25em;
+    font-weight: 700;
+}

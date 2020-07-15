@@ -1,0 +1,39 @@
+.property-device-well{
+    display: inline-flex;
+    position: relative;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 240px;
+    /* width: 290px; */
+    height: 130px;
+    margin: 1.5% 1.5%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.property-device-well>div.img{
+    width: 110px;
+    height: 100%;
+}
+
+.property-device-well>div.data{
+    width: calc(100% - 115px);
+    height: 100%;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.property-device-well>div.data>.device-place{
+    overflow-x: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.property-device-well>div.data>.device-name{
+    font-weight: 600;
+}
+
+.property-device-well>div.data>.device-value{
+    font-size: 24px;
+}

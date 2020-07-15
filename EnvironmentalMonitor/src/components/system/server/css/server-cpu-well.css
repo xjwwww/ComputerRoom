@@ -1,0 +1,47 @@
+.server-cpu-well{
+    /* display: flex;
+    justify-content: space-around; */
+    display: flex;
+    flex-direction: column;
+    margin:0 7px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.server-cpu-well__header{
+    font-size: 1.125em;
+}
+
+.server-cpu-well__content{
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.cpu-pie{
+    flex:2;
+}
+
+.cpu-progresses{
+    flex: 3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 32% 32% 32%;
+    align-items: center;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+}
+
+.cpu-progress{
+    
+}
+
+.cpu-progress__key{
+    color: gray;
+}
+
+.cpu-progress__value{
+
+}
