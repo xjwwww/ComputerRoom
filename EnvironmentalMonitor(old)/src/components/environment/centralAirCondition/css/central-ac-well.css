@@ -1,0 +1,47 @@
+.central-ac-well{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    max-height: 750px;
+    font-size: 16px;
+}
+
+.central-ac-well__setting{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.central-ac-well__head{
+    padding-left: 20px;
+    font-size: 1.125em;
+    font-weight:600; 
+}
+
+.central-ac-well__subhead{
+    padding-left: 20px;
+    font-size: 1em;
+    color: rgba(153,153,153,1);
+    font-weight: 300;
+}
+
+.central-ac-well__content{
+    display: flex;
+    justify-content:space-around;
+    flex-grow: 1;
+    /* position: relative; */
+    padding: 5px;
+    font-size: 1em;
+}
+
+.central-ac-well__column{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 0.3125em;
+    /* flex:1; */
+}

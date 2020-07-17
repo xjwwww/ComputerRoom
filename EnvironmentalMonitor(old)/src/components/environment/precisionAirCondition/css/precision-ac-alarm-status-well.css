@@ -1,0 +1,65 @@
+.precision-alarm-status-well{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    /* height: 100%; */
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.precision-alarm-status-well__title{
+    /* height: 25px; */
+    font-size: 1.125em;
+    font-weight: 600;
+    /* line-height: 25px; */
+}
+
+.precision-alarm-status-well__content{
+    display: flex;
+    /* height: calc(100% - 25px); */
+    flex-grow: 1;
+}
+
+.precision-alarm-status-well__part{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    width: 50%;
+    /* height: 100%; */
+}
+
+.alarm-status-row{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    /* height: 25px; */
+    font-size: 1em;
+    /* line-height: 25px; */
+}
+
+.alarm-status-row__key{
+    /* display: inline-block;
+    position: absolute;
+    left: 10px; */
+    padding-left: 30px;
+    background: url(../img/normal.png) no-repeat left;
+}
+
+.alarm-status-row__key.alarm-status-row__key_alarm{
+    background: url(../img/alarm.png) no-repeat left;
+}
+
+.alarm-status-row__value{
+    /* display: inline-block;
+    position: absolute;
+    right: 10px; */
+}
+
+.alarm-status-row__value.alarm-status-row__value_alarm{
+    color: red;
+}

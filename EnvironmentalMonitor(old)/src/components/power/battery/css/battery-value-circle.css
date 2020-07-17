@@ -1,0 +1,53 @@
+.battery-value-circle{
+    width: 32%;
+    height: 100%;
+    text-align: center;
+}
+
+.battery-value-circle__content{
+    position: relative;
+    width: 100%;
+	/* height: 120px; */
+}
+
+.battery-value-circle__value{
+    position: absolute;
+	top: 40%;
+	width: 100%;
+	font-size: 1.625em;
+	font-weight: 300;
+	text-align: center;
+	color: #5786EE;
+}
+
+.battery-value-circle__status{
+    position: absolute;
+	top: 65%;
+	width: 100%;
+	font-size: 0.875em;
+	font-weight: 300;
+	text-align: center;
+	color: #5786EE;
+}
+
+.battery-value-circle__value:after{
+	content: attr(data-unit);
+	font-size: 0.875em;
+	display: inline;
+}
+
+.battery-value-circle__footer{
+    /* height: 30px;
+    line-height: 30px; */
+    text-align: center;
+}
+
+.battery-value-circle__name{
+    width: 90px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-size:1em;
+    line-height: 1.7;
+    background:rgba(135,146,142,0.1);
+}

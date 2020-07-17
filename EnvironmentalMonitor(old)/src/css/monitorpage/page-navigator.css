@@ -1,0 +1,160 @@
+.ctm-navibar{
+    display: flex;
+    height:100%;
+    width: 100%;
+    /* margin: 0; */
+    padding: 0 10px;
+    justify-content: space-between;
+    font-size: 16px;
+    background-color: rgb(87,134,238);
+}
+
+.ctm-navibar__header{
+    margin-left: 1em;
+    margin-top: 0.7em;
+}
+
+/* .software-name,
+.software-name:link,
+.software-name:visited,
+.software-name:hover,
+.software-name:active{
+    display: flex;
+    align-items: center;
+    text-decoration:none;
+    color: white;
+} */
+
+.software-name{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* justify-content: space-around; */
+    height: 100%;
+    color: white;
+}
+
+.en-name{
+    position: relative;
+    font-size: 1.125em;
+    /* text-indent: 1em; */
+}
+
+.en-name-suffix{
+    font-size: 0.8em;
+    vertical-align: top;
+}
+
+.en-name::before{
+    display: inline;
+}
+
+.ch-name{
+    font-size: 1.125em;
+    font-weight: 600;
+}
+
+.ctm-navibar__middle,
+.ctm-navibar__right{
+    height: 100%;   
+    text-align: center;
+}
+
+.ctm-navibar__middle{
+    /* width: 60%; */
+    display: inline-flex;
+}
+
+.ctm-navibar-item{
+    /* display: inline-block; */
+    height:100%; 
+    text-align: center;
+}
+
+.ctm-navibar-item.ctm-navibar-item_middle{
+    width: 8em;
+}
+
+.ctm-navibar-item__href{
+    display: block;
+    height:100%;
+    text-decoration: none;
+    color:white;
+    cursor: pointer; 
+}
+
+.ctm-navibar-item__href.ctm-navibar-item__href_middle{
+    padding-top: 1.875em;
+    padding-bottom: 1em;
+    /* font-size: 1em; */
+}
+
+.monitor-item-pop{
+    /* overflow-x: auto; */
+    /* max-width: calc(100% - 15px); */
+    /* white-space:nowrap; */
+    /* overflow-y: auto; */
+    /* max-height: 300px; */
+    padding: 5px 0;
+}
+
+.monitor-item-pop__list{
+    overflow-y:auto;
+    max-height: 450px;
+}
+
+.monitor-item-pop__list::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 2px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 2px;
+}
+.monitor-item-pop__list::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 1px;
+    -webkit-box-shadow: inset 0 0 5px rgb(128,128,128);
+    background: gray;
+}
+
+.ctm-navibar-item__href.ctm-navibar-item__href_right{
+    padding-top: 1.667em;
+    padding-bottom: 0.8em;
+    font-size: 1.125em;
+}
+
+.ctm-navibar-item__href:hover,
+.ctm-navibar-item__href:focus,
+.ctm-navibar-item__href_active{
+    background-color: rgb(103,146,240);
+    text-decoration: none;
+    color:white; 
+}
+
+.ctm-navibar-item__href_active{
+    border-bottom:4px solid white ;
+}
+
+.ctm-navibar__right{
+    display: inline-flex;
+    /* width: 16%; */
+    /* font-size: 0; */
+}
+
+/* .ctm-navibar__right .choose-place{
+    width: 20%;
+    height: 98%;
+}
+
+.ctm-navibar__right .choose-place>a{
+    font-size: 0.9rem;    		
+} */
+
+.ctm-navibar-item.ctm-navibar-item_right{
+    position: relative;
+    width: 3em;
+    /* font-size: 16px; */
+}
+
+/* .ctm-navibar__right .lain-icon:last-child .dropdown-menu{
+    left:-100px;
+} */
+.ctm-navibar-item_right .el-badge__content{
+    border: none;
+}

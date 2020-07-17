@@ -1,0 +1,51 @@
+.electric-meter-well{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    max-height: 750px;
+    font-size: 16px;
+}
+
+.electric-meter-well__head{
+    /* height: 25px; */
+    padding-left: 20px;
+    /* line-height: 25px; */
+    font-size: 1.125em;
+    font-weight:600; 
+}
+
+.electric-meter-well__subhead{
+    /* height: 15px; */
+    padding-left: 20px;
+    /* line-height: 15px; */
+    font-size: 1em;
+    color: rgba(153,153,153,1);
+    font-weight: 300;
+}
+
+.electric-meter-well__content{
+    display: flex;
+    justify-content:space-around;
+    flex-grow: 1;
+    /* position: relative; */
+    /* height: calc(100% - 40px); */
+    padding: 5px 0;
+    font-size: 1em;
+}
+
+.electric-meter-well__phase-content{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    width: 50%;
+    /* height: 100%; */
+}
+
+.electric-meter-well__circle-content{
+    position: relative;
+    width: 47%;
+    /* height: 100%; */
+}

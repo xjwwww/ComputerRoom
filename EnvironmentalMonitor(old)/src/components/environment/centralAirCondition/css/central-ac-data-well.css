@@ -1,0 +1,45 @@
+.central-ac-data-well{
+    display: flex;
+    flex:1;
+    margin: 0.3125em 0;
+    padding: 0.625em;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.central-ac-data-well__column{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.central-ac-data-well__divide{
+    width: 1px;
+    background: #EEF5FB;
+}
+
+.central-ac-data{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    padding: 0 0.625em;
+    line-height: 1.7;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.central-ac-data__kv{
+    
+}
+
+.central-ac-status__v{
+    color: #5097FF;
+    /* font-size: 1em; */
+}
+
+.central-ac-status__v_alarm{
+    color: #FFA549;
+    /* font-size: 1em; */
+}

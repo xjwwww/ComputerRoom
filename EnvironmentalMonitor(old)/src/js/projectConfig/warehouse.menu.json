@@ -1,0 +1,28 @@
+[
+    {
+        "name":"环境监控",
+        "key":"environment",
+        "visible":1,
+        "devices":[
+            {"name":"温湿度传感器","key":"temperatureAndHumidity","visible":1},
+            {"name":"温度电缆","key":"Fiber","visible":1},
+            {"name":"DS18B20","key":"DS18B20","visible":1},
+            {"name":"PH浓度传感器","key":"phmeter","visible":1},
+            {"name":"氧气变送器","key":"oxygen","visible":1},
+            {"name":"二氧化碳变送器","key":"carbonDioxide","visible":1},
+            {"name":"变焦智能快球","key":"video","visible":1}
+        ]
+    },
+    {
+        "name":"系统监控",
+        "key":"system",
+        "visible":1,
+        "devices":[
+            {"name":"日志管理","key":"journal","visible":1},
+            {"name":"设备管理","key":"device","visible":1},
+            {"name":"用户管理","key":"administrator","visible":1},
+            {"name":"资产管理","key":"property","visible":1},
+            {"name":"服务器","key":"server","visible":1}
+        ]
+    }
+]

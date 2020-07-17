@@ -1,0 +1,34 @@
+.electric-meter-value-circle{
+	width: 50%;
+	/* height: 100%; */
+    text-align: center;
+}
+
+.electric-meter-value-circle__content{
+    position: relative;
+    width: 100%;
+	/* height: 100px; */
+}
+
+.electric-meter-value-circle__value{
+    position: absolute;
+	top: 50%;
+	width: 100%;
+	font-size: 1.125em;
+	font-weight: 300;
+	text-align: center;
+	color: #8AC3F8;
+}
+
+.electric-meter-value-circle__value:after{
+	content: attr(data-unit);
+	font-size: 1em;
+	display: inline;
+}
+
+.electric-meter-value-circle__footer{
+	text-align: center;
+	/* height: 30px; */
+	font-size:1em;
+	/* line-height: 30px; */
+}

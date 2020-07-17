@@ -1,0 +1,104 @@
+.ups-work-status-well{
+    display: flex;
+    justify-content: space-around;
+    width: 65%;
+    /* height: 100%; */
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.ups-work-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* width: 20%; */
+    flex-grow: 1;
+    height: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.ups-work-status__icon{
+    /* width: 95px;
+    height: 95px; */
+    /* width: calc(100% - 10px); */
+    margin: 0 auto;
+    border: 10px solid;
+    border-radius: 50%;
+    animation: infinite alternate 1.5s;
+}
+
+.ups-work-status__icon.ups-work-status__icon_status_load{
+    /* border-color: rgb(227,247,234); */
+    animation-name:ups-load-animation;
+    background: rgb(115,213,149) url(../img/load.png) no-repeat center;
+}
+
+@keyframes ups-load-animation{
+    from{border-color: rgb(227,247,234);}
+    to{border-color: white;}
+}
+
+.ups-work-status__icon.ups-work-status__icon_status_temperature{
+    /* border-color: rgb(242,232,252); */
+    animation-name:ups-temperature-animation;
+    background: rgb(188,140,239) url(../img/temperature.png) no-repeat center;
+}
+
+@keyframes ups-temperature-animation{
+    from{border-color: rgb(242,232,252);}
+    to{border-color: white;}
+}
+
+.ups-work-status__icon.ups-work-status__icon_status_battery{
+    /* border-color: rgb(231,233,253); */
+    animation-name: ups-battery-animation;
+    background: rgb(134,147,243) url(../img/battery.png) no-repeat center;
+}
+
+@keyframes ups-battery-animation{
+    from{border-color: rgb(231,233,253);}
+    to{border-color: white;}
+}
+
+.ups-work-status__icon.ups-work-status__icon_status_converter{
+    /* border-color: rgb(232,243,254); */
+    animation-name: ups-converter-animation;
+    background: rgb(138,195,248) url(../img/converter.png) no-repeat center;
+}
+
+@keyframes ups-converter-animation{
+    from{border-color: rgb(232,243,254);}
+    to{border-color: white;}
+}
+
+.ups-work-status__icon.ups-work-status__icon_status_rectifier{
+    /* border-color: rgb(255,238,234); */
+    animation-name: ups-rectifier-animation;
+    background: rgb(255,168,151) url(../img/rectifier.png) no-repeat center;
+}
+
+@keyframes ups-rectifier-animation{
+    from{border-color: rgb(255,238,234);}
+    to{border-color: white;}
+}
+
+.ups-work-status__footer{
+    width: 100%;
+    /* height: 40px; */
+    font-size: 1em;
+}
+
+.ups-work-status__value{
+    color: #5097FF;
+    /* height: 20px; */
+}
+
+.ups-work-status__value.ups-work-status__value_alarm{
+    color: #FF5050;
+}
+
+.ups-work-status__name{
+    /* height: 20px; */
+}

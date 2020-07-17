@@ -1,0 +1,27 @@
+  .ctm-sidebar {
+    overflow-x:hidden;
+    overflow-y: auto;
+    width:100%;
+    height:100%;
+    padding: 0.625em 0;
+    background-color: rgb(47,62,83);
+    font-size: 0.9em;
+    white-space: nowrap;
+
+  }
+  .ctm-sidebar > li > a {
+    /* padding-left: 20px; */
+    color: white;
+    background-color: rgb(47,62,83);
+    
+  }
+
+  .ctm-sidebar > li > a.active,
+  .ctm-sidebar > li > a:hover,
+  .ctm-sidebar > li > a:focus {
+    background-color: rgb(70,99,159);
+  }
+
+  .nav>li>a {
+    padding: 0.625em 0.9375em 0.625em 2em;
+}

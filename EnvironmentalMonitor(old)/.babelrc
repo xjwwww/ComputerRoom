@@ -1,0 +1,16 @@
+{
+  "presets": [
+    ["es2015", { "modules": false }],
+    ["vue-app"]
+  ],
+  "ignore": ["./src/components/security/video/js/Hikvision/webVideoCtrl.js"],
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}

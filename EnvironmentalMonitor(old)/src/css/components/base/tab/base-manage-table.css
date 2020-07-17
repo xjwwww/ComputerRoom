@@ -1,0 +1,105 @@
+/* 报警查询&设备管理 */
+.ctm-manage-table{ 
+    height: calc(100% - 40px);
+}
+
+/* .manage-table-operation{  
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.714em;
+    background-color: rgb(249,249,249);
+    font-size: 14px;
+}
+
+.manage-table-operation__part{
+    position:relative;
+}
+
+.manage-table-operation__button{
+    width: 6.0714em;
+    height: 2em;
+    margin-left: 18px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+.manage-table-operation__button:hover{
+    opacity: 0.8;
+}
+
+.manage-table-operation__button.manage-table-operation__button_function_refresh{
+    background:rgb(73,210,166);
+}
+
+.manage-table-operation__button.manage-table-operation__button_function_create{
+    background:rgb(78,129,246);
+}
+
+.manage-table-operation__button.manage-table-operation__button_function_export{
+    background:rgb(246,179,127);
+}
+
+.manage-table-operation__button.manage-table-operation__button_function_setting{
+    background:rgb(247, 247, 247);
+}
+
+.manage-table-operation__search-keyword{
+    position: relative;
+    display: inline-block;
+} */
+
+.manage-table-operation__input{
+    height: 2em;
+    width: 8.571em;
+    /* padding-right: 20px; */
+    margin-right: 18px;
+}
+
+.ctm-manage-table>div.el-table.el-table--border{
+    overflow-x:hidden;
+    overflow-y: auto;
+    height: calc(100% - 48px);
+    border-top: 1px solid rgb(223,223,223);
+    border-left: none;
+}
+
+.el-table .alarm-row{
+    color: red;
+}
+
+.expand-data{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-size: 16px;
+    text-align: center;
+}
+
+.expand-data-area{
+    width: 32%;
+    /* border: 3px solid rgb(64,158,255);
+    border-radius:4px;  */
+}
+
+.expand-data-area__header{
+    display: flex;
+    color: #303133;
+    background: #f5f7fa;
+}
+
+.expand-data-area__th{
+    line-height: 1.7;
+    font-size: 1em;
+}
+
+.expand-data-area__data{
+    display: flex;
+    color: #303133;
+}
+
+.expand-data-area__td{
+    line-height: 1.5;
+    font-size: 0.875em;
+}

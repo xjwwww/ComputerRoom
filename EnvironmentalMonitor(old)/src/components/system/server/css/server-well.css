@@ -1,0 +1,8 @@
+.server-well{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    height: 20em;
+    padding: 10px;
+    font-size: 16px;
+}

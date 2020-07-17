@@ -1,0 +1,38 @@
+.battery-well{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 48%;
+    /* height: 47%;
+    min-height: 230px; */
+    margin: 0 .5% .5% 10px;
+}
+
+.battery-well__head{
+    /* height: 25px; */
+    padding-left: 20px;
+    /* line-height: 25px; */
+    font-size: 1.125em;
+    font-weight:600; 
+}
+
+.battery-well__subhead{
+    /* height: 15px; */
+    padding-left: 20px;
+    /* line-height: 15px; */
+    font-size: 1em;
+    color: rgba(153,153,153,1);
+    font-weight: 300;
+}
+
+.battery-well__content{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 100%;
+    /* height: calc(100% - 40px); */
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}

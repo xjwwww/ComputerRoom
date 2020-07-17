@@ -1,0 +1,31 @@
+[
+    {
+        "name":"水质监控",
+        "key":"water",
+        "visible":1,
+        "devices":[
+            {"name":"酸碱仪","key":"phmeter","visible":1},
+            {"name":"溶氧仪","key":"dissolvedOxygen","visible":1},
+            {"name":"氨氮","key":"ammoniaNitrogen","visible":1},
+            {"name":"亚硝酸盐","key":"nitrite","visible":1},  
+            {"name":"盐度","key":"salinity","visible":1},          
+            {"name":"浑浊度","key":"turbidity","visible":1},            
+            {"name":"水位","key":"waterLevel","visible":1},            
+            {"name":"叶绿素","key":"chlorophyll","visible":1},
+            {"name":"蓝藻素","key":"cyanin","visible":1},
+            {"name":"视频监控","key":"video","visible":1}
+        ]
+    },
+    {
+        "name":"系统监控",
+        "key":"system",
+        "visible":1,
+        "devices":[
+            {"name":"日志管理","key":"journal","visible":1},
+            {"name":"设备管理","key":"device","visible":1},
+            {"name":"用户管理","key":"administrator","visible":1},
+            {"name":"资产管理","key":"property","visible":1},
+            {"name":"服务器","key":"server","visible":1}
+        ]
+    }
+]

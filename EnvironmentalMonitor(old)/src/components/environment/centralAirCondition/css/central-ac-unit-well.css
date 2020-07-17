@@ -1,0 +1,47 @@
+.central-ac-unit-well{
+    display: flex;
+    flex-direction: column;
+    flex:3;
+    margin: 0.3125em 0;
+    padding: 0.625em;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.central-ac-unit-well__header{
+    font-size: 1.125em;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.central-ac-unit-well__content{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.central-ac-unit-well__data{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.625em;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.central-ac-unit-well__data:nth-child(even){
+    background: #EEF5FB;
+}
+
+.central-ac-unit-well__k{
+
+}
+
+.central-ac-unit-well__v{
+    color: #5097FF;
+}
+
+.central-ac-unit-well__v_alarm{
+    color: #FFA549;
+}

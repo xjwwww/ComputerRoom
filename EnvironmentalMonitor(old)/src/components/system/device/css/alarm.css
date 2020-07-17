@@ -1,0 +1,51 @@
+/* 补充系统监控-告警信息查询页面样式 */
+.alarm-sidetree-open{
+    width: 200px;
+}
+
+.alarm-table-close{
+    width: calc(100% - 200px);
+}
+
+.alarm-menu-sidetree-open{
+    width: 200px;
+}
+
+.alarm-close{
+    width: calc(100% - 200px);
+}
+
+.alarm-tree-node div{
+    display: inline-block;
+}
+
+.alarm-tree-node div.badge{
+    transform: scale(0.8);
+    background-color: red;
+}
+
+.alarm-set-header{
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border:1px solid lightgray;
+}
+
+.alarm-set-body{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+    /* border:1px solid lightgray; */
+}
+
+/* .alarm-set-body>div{
+    height: 30px;
+} */
+
+.alarm-set-group{
+    /* border-top: 1px solid #eaeefb; */
+    padding: 5px;
+    text-align: center;
+}

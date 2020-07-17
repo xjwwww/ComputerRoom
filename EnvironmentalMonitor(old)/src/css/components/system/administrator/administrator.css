@@ -1,0 +1,38 @@
+/* 补充系统监控-用户管理页面样式 */
+.account-sidetree-open{
+    width: 240px;
+}
+
+.account-sidetree-close{
+    width: 15px;
+}
+
+.account-table-open{
+    width: calc(100% - 15px);
+}
+
+.account-table-close{
+    width: calc(100% - 240px);
+}
+
+div.administrator-tree-node>i{
+    position: absolute;
+    top: 3px;
+}
+
+div.administrator-tree-node>i.frozen{
+    right: 50px;
+}
+
+div.administrator-tree-node>i.add{
+    right: 35px;
+}
+
+div.administrator-tree-node>i.modify{
+    right: 20px;
+}
+
+div.administrator-tree-node>i.delete,
+div.administrator-tree-node>i.unfrozen{
+    right: 5px;
+}

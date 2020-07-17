@@ -1,0 +1,36 @@
+.server-memory-swap-well{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin:0 7px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.server-memory-swap-well__header{
+    font-size: 1.125em;
+}
+
+.server-memory-swap-well__content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.memory-swap-progress__key{
+    position: absolute;
+    left: 0;
+    color: gray;
+}
+
+.memory-swap-progress__value{
+    position: absolute;
+    right: 0;
+}
+
+.memory-swap-progress__description{
+    position: relative;
+}
