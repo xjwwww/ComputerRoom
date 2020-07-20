@@ -1,0 +1,136 @@
+.on-off-write-container{
+	display: inline-block;
+	/* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+	width: 300px;
+	border: 1px solid #d7dae2;
+	margin: 10px 10px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.on-off-write-content{
+	position: relative;
+	width: 100%;
+	height: 120px;
+}
+
+.on-off-write-content__part{
+	position: absolute;
+	top:0;
+	width: 50%;
+	height: 100%;
+	/* background-position: center; */
+}
+
+.on-off-write-content__part_left{
+	left:0;
+	/* background-repeat: no-repeat; */
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.on-off-write-content__part_right{
+	right:0;
+}
+
+.on-off-write-content__device-name{
+	position: relative;
+	top: 26px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+}
+
+.on-off-write-footer{
+	width: 100%;
+	background-color: #F5F5F5;
+	text-align: center;
+	font-size: 20px;
+	line-height: 1.7;
+}
+
+.switch-container{
+	position: relative;
+	top: 26px;
+	width: 100%;
+}
+
+.switch-label{
+	position: relative;
+	display: block;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    cursor: pointer;
+    width: 60px;
+    height: 26px;
+   	background-color: white;
+	border-radius: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    transition: border 0.3s ease-in 0s;
+}
+
+.switch-ball{
+	position: absolute;
+	/* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+	top: 0;
+	left:1px;
+	width: 24px;
+	height: 24px;
+	margin: 1px;
+	border: none;
+	border-radius: 20px;
+	/* background:rgba(91,139,234,1); */
+	transition-property:left,background;
+	transition-duration:0.3s;
+	transition-timing-function:ease-in;
+}
+
+.switch-ball::before{
+	content: attr(data-off);
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 1.7;
+	font-size: 14px;
+	color: white;
+	font-family:Trebuchet, Arial, sans-serif;     
+	font-weight: bold;
+	text-align: center;
+	box-sizing: border-box;
+	transition: content 0.3s ease-in 0s;
+}
+
+/* .onoffswitch:checked + .switch-label .switch-ball{
+	left:33px;
+	background:rgba(56,223,150,1);
+}
+
+.onoffswitch:checked + .switch-label{
+	border-color:rgba(56,223,150,1);
+} */
+
+/* .onoffswitch:checked + .switch-label .switch-ball::before{
+	content: attr(data-on);
+} */
+
+.switch-ball.switch-ball_active{
+	left:33px;
+}
+
+.switch-ball.switch-ball_active::before{
+	content: attr(data-on);
+}
+
+.polygon-left,
+.polygon-right{
+	transition: fill 0.3s;
+}

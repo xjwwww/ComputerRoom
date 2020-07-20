@@ -9,7 +9,7 @@
             <!-- <img src="../../img/temperature.png" height="100%"/> -->
         <!-- </div> -->
         <div class="monitor-device__icon">
-            <img :src="isActive?activeImgObj:imgObj" height="100%" >
+            <img :src="isActive?activeImgObj:imgObj" height="100%">
         </div>
         <div class="monitor-device__name" :class="isActive && 'monitor-device__name_active'">
             {{device.name}}

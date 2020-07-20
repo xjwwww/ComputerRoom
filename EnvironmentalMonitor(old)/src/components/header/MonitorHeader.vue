@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="ctm-navibar__middle">
-
+         
                 <el-popover v-model="item.popVisible" :ref="item.key" placement="bottom" trigger="hover" v-for="item in monitoringItem" :key="item.key" popper-class="monitor-item-pop" width="160">
                     <div class="monitor-item-pop__list">
                         <router-link :to="device.urlAddress" @click.native="item.popVisible=false" v-for="device in item.devices" :key="device.key" v-slot="{isActive,href,navigate}" tag="div">
@@ -31,13 +31,25 @@
               
             <!-- 新增功能 -->
             <div class="ctm-navibar__right">
-                  <div class="ctm-navibar-item ctm-navibar-item_right">
-                    <router-link to="/systems"  title="测试模块" tag="a" class="ctm-navibar-item__href ctm-navibar-item__href_right">
-                        <i class="el-icon-setting">
-                            
-                        </i>
-                    </router-link>
+            <el-popover
+                placement="top"
+                trigger="hover"
+                width="150"
+              >
+                <div class="tips-content">
+                    <div  v-for="(item, index) in Text" :key="item.name" @click="jump(item.path,index)" >
+                        <img :src="item.src"/>
+                        <div :class='[index==mark ? "active" : ""]' style="width: 6vw;display: block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"> {{item.name}}</div>
+                   </div>
                 </div>
+                <span slot="reference">
+                  <div class="ctm-navibar-item ctm-navibar-item_right">
+                    <div class="ctm-navibar-item__href ctm-navibar-item__href_right">
+                        <i class="el-icon-setting"></i>
+                    </div>
+                </div>
+                </span>
+              </el-popover>
 
                 <div class="ctm-navibar-item ctm-navibar-item_right">
                     <a class="ctm-navibar-item__href ctm-navibar-item__href_right" href="#"  title="软件帮助文档">
@@ -133,9 +145,19 @@ import { mapGetters } from "vuex";
 
 export default {
   data() {
-    return {};
+    return {
+        Text:[
+          {name:'天窗消防门磁',path:'/skylight',src:require("./img/Gatemagnetism.png")},
+          {name:"机柜内散热风机哈哈哈哈",path:'/coolingFan',src:require('./img/Coolingfan.png')}
+        ],
+        mark : -1
+    };
   },
   methods: {
+    jump(res,index){
+        this.mark = index
+        this.$router.push(res)
+    },
     logout() {
       sessionStorage.removeItem("name");
       window.location.href = "/login.html";
@@ -251,6 +273,7 @@ export default {
           });
           items.push(newItem);
         });
+        console.log(items);
         return items;
       }
       // set:function(){
