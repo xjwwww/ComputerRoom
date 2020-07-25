@@ -1,5 +1,7 @@
 <template>
-    <component :is="inheritWell" :device="device" :setting="setting"></component>
+    <div>
+        <component :is="inheritWell" :device="device" :setting="setting"></component>
+    </div>
 </template>
 <script>
 import BaseOnOffWriteWell from '../../base/well/baseOnOffWriteWell/BaseOnOffWriteWell.vue'
@@ -20,7 +22,7 @@ export default {
             }
         }
     },
-    props:['device'],
+    props:['device','id'],
 }
 </script>
 <style>

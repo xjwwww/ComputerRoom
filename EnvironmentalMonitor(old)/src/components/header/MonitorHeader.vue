@@ -45,7 +45,7 @@
                 <span slot="reference">
                   <div class="ctm-navibar-item ctm-navibar-item_right">
                     <div class="ctm-navibar-item__href ctm-navibar-item__href_right">
-                        <i class="el-icon-setting"></i>
+                        <i class="el-icon-copy-document"></i>
                     </div>
                 </div>
                 </span>
@@ -148,7 +148,7 @@ export default {
     return {
         Text:[
           {name:'天窗消防门磁',path:'/skylight',src:require("./img/Gatemagnetism.png")},
-          {name:"机柜内散热风机哈哈哈哈",path:'/coolingFan',src:require('./img/Coolingfan.png')}
+          {name:"机柜内散热风机",path:'/coolingFan',src:require('./img/Coolingfan.png')}
         ],
         mark : -1
     };
@@ -273,7 +273,6 @@ export default {
           });
           items.push(newItem);
         });
-        console.log(items);
         return items;
       }
       // set:function(){

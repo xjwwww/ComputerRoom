@@ -1,5 +1,7 @@
 import { service } from '../../request/request.js'
 import { Message } from 'element-ui'
+import { data } from 'jquery'
+// import { data } from 'jquery'
 
 var getDevice = function() {
     let dId = 3
@@ -13,7 +15,7 @@ var getDevice = function() {
         )
 }
 
-var deviceDecomposition = function({ id, diId, gId, name, gallery, address, kId }) {
+var deviceDecomposition = function({ id, diId, gId, name, gallery, address, kId, status }) {
     return {
         deviceId: id,
         channel: gallery,
@@ -22,7 +24,7 @@ var deviceDecomposition = function({ id, diId, gId, name, gallery, address, kId 
         deviceTypeId: kId,
         ipId: diId,
         groupId: gId,
-        status: 2
+        status,
     }
 }
 
@@ -43,6 +45,7 @@ var updateDevice = function(object) {
 }
 
 var deviceInDecomposition = function({ deviceId, name, address, channel, ipId, deviceTypeId, groupId }) {
+    // console.log("调用了deviceInDecomposition---")
     return {
         id: deviceId,
         name,
@@ -89,9 +92,19 @@ var getIps = function() {
 }
 
 var getDevicesByDeviceTypeId = function(deviceTypeId) {
+        return service({
+                method: 'get',
+                url: `/software/ktr8060/find8060ByDevice/${deviceTypeId}`
+            })
+            .then(data =>
+                data.map(element => deviceDecomposition(element))
+            )
+    }
+    // 查询8060设备（ 散热或者门磁）
+var getDevicesByDeviceTypeIds = function(kId) {
     return service({
             method: 'get',
-            url: `/software/ktr8060/find8060ByDevice/${deviceTypeId}`
+            url: `/software/ktr8060/findKtr8060ManageByKid?kId=` + kId,
         })
         .then(data =>
             data.map(element => deviceDecomposition(element))
@@ -122,5 +135,6 @@ export default {
     getDeviceType,
     getIps,
     getDevicesByDeviceTypeId,
-    changeDeviceStatus
+    changeDeviceStatus,
+    getDevicesByDeviceTypeIds
 }

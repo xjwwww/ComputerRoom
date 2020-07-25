@@ -3,12 +3,13 @@ import { Message } from 'element-ui'
 
 
 
-var changeDeviceStatus = function(status) {
+var changeDeviceStatus = function(id, status) {
     return service({
             method: 'get',
-            url: `/software/ktr8060/openOrCloseFan/${status}`
+            url: ` /software/ktr8060//open8060Equipment/${id}/${status}`
         })
         .then(({ zt }) => {
+            console.log(zt)
             return {
                 result: zt
             }

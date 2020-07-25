@@ -20,7 +20,7 @@ export default {
             }
         }
     },
-    props:['device'],
+    props:['device']
 }
 </script>
 <style>

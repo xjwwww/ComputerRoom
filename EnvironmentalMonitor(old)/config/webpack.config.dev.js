@@ -13,12 +13,13 @@ module.exports = webpackMerge(webpackBase, {
         // host:'192.168.3.16',
         disableHostCheck: true,
         compress: true,
-        // open:true,// 自动打开浏览器，适合懒人
+        // open: true, // 自动打开浏览器，适合懒人
         index: 'monitorpage.html', // 与HtmlWebpackPlugin中配置filename一样
         proxy: {
             '/software': {
-                // target: 'http://192.168.1.42:8080/software', //目标接口域名
+                // target: 'http://192.168.1.253:8080/software', //目标接口域名
                 target: 'https://www.kitozer.net:9000/software', //目标接口域名
+                // target: 'http://192.168.1.42:8080/software/', //目标接口域名
                 changeOrigin: true, //是否跨域
                 pathRewrite: {
                     '^/software': '' //重写接口

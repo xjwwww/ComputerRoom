@@ -20,7 +20,7 @@
             return {
                 groups:[],
                 groupsReflect:{},
-                devices:{},
+                devices:{},//处理完成后的数据
                 // devicesReflect:{},
                 deviceWell:deviceWell,
             }           
@@ -31,13 +31,13 @@
                 .then(data=>{
                         // this.devices=data
                         // this.devices.forEach(element=>this.devicesReflect[element.deviceId]=element)
-                        data.forEach(element=>this.devices[element.deviceId]=element)                    
+                        data.forEach(element=>this.devices[element.deviceId]=element)
                     }
                 )
             },
             build(){
                 build.call(this)
-            },
+            }
         },
         created(){
             this.build()

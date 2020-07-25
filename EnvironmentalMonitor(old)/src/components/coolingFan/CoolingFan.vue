@@ -8,7 +8,6 @@
                 </el-tab-pane>
             </el-tabs>
         </div>
-        xjw
     </div>
 </template>
 <script>
@@ -28,7 +27,7 @@
         },
         methods:{
             getDevices(){
-                return query.getDevicesByDeviceTypeId(3)
+                 return query.getDevicesByDeviceTypeIds(2)
                 .then(data=>{
                         // this.devices=data
                         // this.devices.forEach(element=>this.devicesReflect[element.deviceId]=element)
@@ -41,7 +40,6 @@
             },
         },
         created(){
-            console.log("散热风机!!");
             this.build()
         },
     }

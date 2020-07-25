@@ -238,10 +238,7 @@ const register = {
         import ('./system/property/Property.vue'),
     // 服务器
     server: () =>
-        import ('./system/server/Server.vue'),
-    // 天窗门磁
-    gatemagnetism: () =>
-        import ('./skylight/GateMagnetism.vue'),
+        import ('./system/server/Server.vue')
 }
 
 export default register

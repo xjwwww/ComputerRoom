@@ -8,6 +8,7 @@
                 </el-tab-pane>
             </el-tabs>
         </div>
+        <el-button type="primary" @click="test">主要按钮</el-button>
     </div>
 </template>
 <script>
@@ -26,6 +27,9 @@
             }           
         },
         methods:{
+            test(){
+                console.log(this.devices)
+            },
             getDevices(){
                 return query.getDevicesByDeviceTypeId(3)
                 .then(data=>{

@@ -17,7 +17,8 @@ export default {
                         right:'rgb(60,218,203)'
                     }
                 }
-            }
+            },
+            Newdevice:[]
         }
     },
     props:['device'],

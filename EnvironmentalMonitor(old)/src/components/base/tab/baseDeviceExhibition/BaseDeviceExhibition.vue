@@ -10,9 +10,9 @@
                 </div>
                 <div class="well-container__status-gallery" v-show="normalDevices.length!==0">
                     <div class="status-gallery__title">设备开启</div>
-                    <component :is="deviceWell" :device="item" v-for="item in normalDevices" :key="item.deviceId"></component>
+                    <component :is="deviceWell" :device="item" v-for="item in normalDevices" :key="item.deviceId" ></component>
                 </div>
-                <div class="well-container__status-gallery" v-show="unConnectedDevices.length!==0">
+                <div class="well-container__status-gallery" v-show="unConnectedDevices.length!==0" >
                     <div class="status-gallery__title">设备关闭</div>
                     <component :is="deviceWell" :device="item" v-for="item in unConnectedDevices" :key="item.deviceId"></component>
                 </div>
@@ -27,10 +27,10 @@
             return {
                 showDevice:false,
                 sidetreeOpen:true,
-                selectedDevices:[],
+                selectedDevices:[]
             }           
         },
-        props:['deviceWell','groups'],
+        props:['deviceWell','groups',],
         computed:{
             alarmDevices(){
                 return this.selectedDevices.filter(item=>item.status==1)
@@ -41,7 +41,7 @@
             unConnectedDevices(){
                 return this.selectedDevices.filter(item=>item.status==2)
             },
-        },
+        }
     }
 </script>
 <style>

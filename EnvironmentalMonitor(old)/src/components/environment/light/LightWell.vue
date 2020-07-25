@@ -24,7 +24,11 @@ export default {
             }
         }
     },
-    props:['device'],
+    props:['device','id'],
+    created(){
+        console.log(this.device)
+        console.log(this.id)
+    }
 }
 </script>
 <style>

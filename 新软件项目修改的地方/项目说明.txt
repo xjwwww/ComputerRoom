@@ -1,0 +1,18 @@
+
+ 1. 解压后，在资源管理器删除 node_modules 文件夹，然后在终端使用
+
+    npm install 命令
+
+ 2. 在 src/js/plugins 下，添加 message.js 文件，内容为：message.txt
+
+ 3. 在 src/js/request/request.js 文件中，内容为：request.txt
+
+ 4. 在 login.js 和 monitorpage.js 文件中添加：
+
+	import message from '../plugins/message'
+	// 挂载自定义message必须放在Vue.use(ElementUI)后面，才能覆盖element-ui默认的message，不然没有效果
+	Vue.use('ElementUI')
+	Vue.prototype.$message = message;
+
+
+	

@@ -27,11 +27,13 @@
         },
         methods:{
             getDevices(){
-                return query.getDevicesByDeviceTypeId(3)
+                return query.getDevicesByDeviceTypeId(6)
                 .then(data=>{
                         // this.devices=data
                         // this.devices.forEach(element=>this.devicesReflect[element.deviceId]=element)
+                        // data.forEach(xjw =>this.devices[xjw.deviceId]=element)
                         data.forEach(element=>this.devices[element.deviceId]=element)
+                        console.log(data)
                     }
                 )
             },
@@ -40,9 +42,9 @@
             },
         },
         created(){
-            console.log("消防门磁")
+            query.getDevicesByDeviceTypeId(6)
             this.build()
-        },
+        }
     }
 
 </script>

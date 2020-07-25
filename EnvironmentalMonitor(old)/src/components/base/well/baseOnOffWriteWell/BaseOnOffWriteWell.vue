@@ -59,7 +59,6 @@ export default {
                 updateStatus=1
             else
                 updateStatus=0
-            
             this.query.changeDeviceStatus(this.device.deviceId,updateStatus)
             .then(({result})=>{
                 if(result==='ok'){
@@ -89,6 +88,8 @@ export default {
         }
     },
     created(){
+        //开始就判断设备的状态!
+        // console.log(this.device.status+"---开机状态")
         if(this.device.status==0)
             this.checkboxValue=true
         else

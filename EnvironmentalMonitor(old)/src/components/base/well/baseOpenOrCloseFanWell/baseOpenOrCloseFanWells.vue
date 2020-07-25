@@ -3,10 +3,10 @@
     <div class="on-off-write-container">
         <div class="on-off-write-content">
             <div class="on-off-write-content__part on-off-write-content__part_left">            
-                <img :src="setting.icon">
+                <img src="../../../header/img/Coolingfan.png" style="width:56px;height:56px">
             </div>
             <div class="on-off-write-content__part on-off-write-content__part_right">
-                <div class="on-off-write-content__device-name">散热风扇</div>
+                <div class="on-off-write-content__device-name">{{device.name}}</div>
                 <div class="switch-container">			
                     <div class="switch-label"  @click="updateDeviceStatus">					
                         <div class="switch-ball" :class="{'switch-ball_active':checkboxValue}" :style="checkboxValue?style.activeBall:style.inactiveBall" data-on="开" data-off="关"></div>
@@ -59,8 +59,7 @@ export default {
                 updateStatus=1
             else
                 updateStatus=0
-            
-            this.query.changeDeviceStatus(updateStatus)
+            this.query.changeDeviceStatus(this.device.deviceId,updateStatus)
             .then(({result})=>{
                 if(result==='ok'){
                     this.changeDeviceStatus()
@@ -89,7 +88,8 @@ export default {
         }
     },
     created(){
-        if(this.device.status==0)
+        //以前0代表开，1代表关，2代表报警
+        if(this.device.status==1)
             this.checkboxValue=true
         else
             this.checkboxValue=false

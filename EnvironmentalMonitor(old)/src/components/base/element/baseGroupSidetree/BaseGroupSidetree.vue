@@ -7,7 +7,7 @@
         </div>
         <div class="ctm-sidetree__search-keyword" v-show="sidetreeOpen">
             <input type="text" class="ctm-sidetree__input ctm-input" placeholder="关键字过滤" v-model="keyword">
-        </div>		
+        </div>
         <div class="ctm-sidetree__tree" v-show="sidetreeOpen">
             <!-- <el-tree :data="groups" :props="defaultGroups" :filter-node-method="filterNode" ref="tree" highlight-current :expand-on-click-node="false" @node-click="chooseNode" lazy :load="loadNode"> -->
             <el-tree ref="tree" :data="treeNodes" :props="defaultGroups" node-key="name" :filter-node-method="filterNode" highlight-current :expand-on-click-node="false" @node-click="chooseNode">
