@@ -19,7 +19,7 @@
         },
         props:['system'],
         created(){
-            //console.log(this.system)
+            console.log(this.system)
             query.getImage(this.system.imgUrl)
             .then(imgSrc=>this.imgSrc=imgSrc)
         },

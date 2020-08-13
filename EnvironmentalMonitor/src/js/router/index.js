@@ -19,19 +19,19 @@ import operateNav from '@/components/operateNav/operateNav.vue'
 // })
 
 export const constantRoutes = [
-    {path:'/', meta:{requireAuth:true},redirect:'/homepage'},
-    {path:'/homepage',name:'homepage',meta:{ requireAuth:true},component:Homepage},
-    {path:'/alarm',meta:{ requireAuth:true},component:Alarm},
-    {path:'/systems',name:'systems',meta:{ requireAuth:true},component:Systems},
-    {path:'/operateNav',name:'operateNav',meta:{ requireAuth:true},component:operateNav}
+    { path: '/', meta: { requireAuth: true }, redirect: '/homepage' },
+    { path: '/homepage', name: 'homepage', meta: { requireAuth: true }, component: Homepage },
+    { path: '/alarm', meta: { requireAuth: true }, component: Alarm },
+    { path: '/systems', name: 'systems', meta: { requireAuth: true }, component: Systems },
+    { path: '/operateNav', name: 'operateNav', meta: { requireAuth: true }, component: operateNav }
 ]
 
 const createRouter = () => new VueRouter({
     // mode: 'history', // require service support
     // scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
-  })
-  
+})
+
 const router = createRouter()
 
 

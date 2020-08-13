@@ -26,9 +26,12 @@ VueRouter.prototype.push = function push(location) {
 export const constantRoutes = [
     { path: '/', meta: { requireAuth: true }, redirect: '/homepage' },
     { path: '/homepage', name: 'homepage', meta: { requireAuth: true }, component: Homepage },
+    //告警讯息
     { path: '/alarm', meta: { requireAuth: true }, component: Alarm },
     { path: '/systems', name: 'systems', meta: { requireAuth: true }, component: Systems },
+    //天窗消防
     { path: '/skylight', name: 'skylight', meta: { requireAuth: true }, component: SkyLight },
+    //散日风扇
     { path: '/coolingFan', name: 'coolingFan', meta: { requireAuth: true }, component: CoolingFan }
 ]
 

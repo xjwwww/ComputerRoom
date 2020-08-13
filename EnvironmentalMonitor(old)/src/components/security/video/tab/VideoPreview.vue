@@ -167,7 +167,7 @@ export default {
             if ('null' == szDeviceIdentify) {
                 return
             }
-
+           
             var iTypeNum = undefined, iTypeOldVal = undefined;
 
             if(this.iType == 2){
@@ -247,10 +247,10 @@ export default {
 
 
 
-        // 开始预览
-        clickStartRealPlay() {
-            //console.log(this.channels[0])
 
+        // 开始预览
+        clickStartRealPlay()
+         {
             var oWndInfo = WebVideoCtrl.I_GetWindowStatus(this.g_iWndIndex),
                 szDeviceIdentify = this.szDeviceIdentify,
                 iRtspPort = this.iRtspPort,
@@ -260,9 +260,8 @@ export default {
             if (null == szDeviceIdentify) {
                 return
             }
-
             var startRealPlay =  ()=> {
-
+  
                 WebVideoCtrl.I_StartRealPlay(szDeviceIdentify, {
                     iRtspPort: iRtspPort,
                     iWndIndex: this.g_iWndIndex,

@@ -29,69 +29,48 @@ import BaseGroupSidetree from '@/components/base/element/baseGroupSidetree/BaseG
 import BaseTablePagination from '@/components/base/element/baseTablePagination/BaseTablePagination.vue'
 import BaseManageTableOperation from '@/components/base/element/baseManageTableOperation/BaseManageTableOperation.vue'
 
-Vue.component('base-device-exhibition',BaseDeviceExhibition)
-Vue.component('base-large-device-exhibition',BaseLargeDeviceExhibition)
-Vue.component('base-middle-device-exhibition',BaseMiddleDeviceExhibition)
-Vue.component('base-alarm-inquiry',BaseAlarmInquiry)
-Vue.component('base-history-inquiry',BaseHistoryInquiry)
+Vue.component('base-device-exhibition', BaseDeviceExhibition)
+Vue.component('base-large-device-exhibition', BaseLargeDeviceExhibition)
+Vue.component('base-middle-device-exhibition', BaseMiddleDeviceExhibition)
+Vue.component('base-alarm-inquiry', BaseAlarmInquiry)
+Vue.component('base-history-inquiry', BaseHistoryInquiry)
 
-Vue.component('base-management-table-operation',BaseManageTableOperation)
-Vue.component('base-group-sidetree',BaseGroupSidetree)
-Vue.component('base-table-pagination',BaseTablePagination)
+Vue.component('base-management-table-operation', BaseManageTableOperation)
+Vue.component('base-group-sidetree', BaseGroupSidetree)
+Vue.component('base-table-pagination', BaseTablePagination)
 
+
+//vue混入
 import permissionMixin from '@/js/mixin/permission.js'
 Vue.mixin(permissionMixin)
-// import projectQuery from '../query/store/projectQuery.js'
-router.beforeEach(async(to,from,next)=>{
-    if(to.path!="/login.html"){
-        if(sessionStorage.token){
-            // if(!store.state.systems){
-            //     console.log("querySystems")
-            //     await store.dispatch('querySystems')
-            //     .then(()=>{
-            //         console.log("then")
-            //         if(!this.selectedSystem){
-            //             let system=checkSystemCookie()
-            //             if(!system)
-            //                 next({name:'systems'})
-            //             else{
-            //                 store.commit('updateSelectedsystem',system)
-            //                 next()
-            //             }
-            //         }else
-            //             next()
-            //     })
-            // }
-            // try{
-            //     console.log("router")
-            //     let data=await projectQuery.getSystems()
-            //     console.log("await-finish")
-            //     next()
-            // }catch(error){
-            //     console.log(error)
-            // }
+    // import projectQuery from '../query/store/projectQuery.js'
+
+//全局的路由守卫   
+router.beforeEach(async(to, from, next) => {
+    if (to.path != "/login.html") {
+        if (sessionStorage.token) {
             const hasRoles = store.getters.roles && store.getters.roles.length > 0
             if (hasRoles) {
                 next()
             } else {
-                if(!store.getters.name)
+                if (!store.getters.name)
                     await store.dispatch('role/updateName')
-                if(!store.getters.roles)
-                    await store.dispatch('role/updateRole',store.getters.name)
+                if (!store.getters.roles)
+                    await store.dispatch('role/updateRole', store.getters.name)
             }
             next()
-        }else{
-            window.location.href="/login.html?fromPath="+to.fullPath
+        } else {
+            window.location.href = "/login.html?fromPath=" + to.fullPath
         }
-    }else{
+    } else {
         next()
     }
 })
 
 /* eslint-disable */
-var mainPage=new Vue({
-    el:'#main-page',
+var mainPage = new Vue({
+    el: '#main-page',
     store,
     router,
-    render:c=>c(monitorpage),
+    render: c => c(monitorpage),
 })

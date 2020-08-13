@@ -41,6 +41,8 @@
                     }
                 )
             },
+
+            //这里call改变引入的函数build中的this，使的引入的build方法中的this指向当前页面
             build(){
                 build.call(this)
             },

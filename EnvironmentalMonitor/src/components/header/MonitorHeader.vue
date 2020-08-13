@@ -32,6 +32,7 @@
                             {{item.name}}
                         </a>
                     </router-link>
+
                 </div>
             </div>
 
@@ -77,7 +78,7 @@
 
         <person-info-dialog ref="personDialog"></person-info-dialog>
 
-        
+
     </div>
 </template>
 <script>

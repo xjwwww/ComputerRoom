@@ -16,6 +16,7 @@ let HTMLPlugins = []
 let Entries = {}
 
 config.HTMLDirs.forEach((page) => {
+    // console.log(page) //在config中的HTMLDirs中的login和monitorpage
     const htmlPlugin = new HTMLWebpackPlugin({
         filename: `${page}.html`,
         template: path.resolve(__dirname, `../src/${page}.html`),
@@ -23,9 +24,10 @@ config.HTMLDirs.forEach((page) => {
         favicon: path.resolve('./src/img/logo/logo.png'),
     });
     HTMLPlugins.push(htmlPlugin);
+    // console.log(HTMLPlugins)
     Entries[page] = ["babel-polyfill", path.resolve(__dirname, `../src/js/page/${page}.js`)];
 })
-
+console.log(Entries);
 // 当以命令行形式运行 webpack 或 webpack-dev-server 的时候，工具会发现，我们并没有提供 要打包 的文件的 入口 和 出口文件，此时，他会检查项目根目录中的配置文件，并读取这个文件，就拿到了导出的这个 配置对象，然后根据这个对象，进行打包构建
 module.exports = {
     entry: Entries, // 入口文件
@@ -71,9 +73,9 @@ module.exports = {
                 include: [path.resolve(__dirname, '../src')],
                 exclude: [path.resolve(__dirname, '../src/components/security/video')],
                 // eslint检查报告的格式规范
-                options: {
-                    formatter: require("eslint-friendly-formatter")
-                }
+                // options: {
+                //     formatter: require("eslint-friendly-formatter")
+                // }
             }
         ],
     },

@@ -22,9 +22,19 @@ const service = axios.create({
     timeout: 6000
 });
 
+//请求拦截器
+service.interceptors.request.use(function(config) {
+    // 处理请求之前的配置
+    config.headers["token"] = "616e15a362285a2a14a0d4ea8b2f091a"
+    return config
+}, function(error) {
+    // 请求失败的处理
+    return Promise.reject(error);
+});
+
+//响应拦截器
 service.interceptors.response.use(
     response => {
-        console.log(response.data)
         if (response.data === false) {
             Message.error('操作失败')
             return Promise.reject(false)
@@ -34,7 +44,8 @@ service.interceptors.response.use(
                 type: 'success'
             })
         else if (response.data.status) {
-            let code = response.data.status.split(" ")[0]
+            // let code = response.data.status.split(" ")[0]
+            let code = response.data.status
             switch (code) {
                 case "401":
                     popMessage('用户未登录,5秒后自动跳转到登录页面', 3000)

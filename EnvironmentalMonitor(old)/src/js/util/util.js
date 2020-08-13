@@ -25,6 +25,7 @@ const addDeviceToGroup = function(devices, groupsArray) {
     })
 }
 
+
 const deepClone = function(obj, parent = null) {
     let result = Array.isArray(obj) ? [] : {}
     let _parent = parent
@@ -106,7 +107,7 @@ const build = function() {
         .then(() => {
             this.groups = deepClone(this.$store.getters.groups)
             initGroupsReflect(this.groups[0], this.groupsReflect) //不能放在store的getters中，否则与grooups中的数据不是同一个地址
-                // addDeviceToGroup(this.devices, this.groupsReflect)
+            addDeviceToGroup(this.devices, this.groupsReflect)
                 //根据vue中$.refs绑定虚拟dom，挂载元素
             this.$refs.deviceExhibition.selectedDevices = Object.values(this.devices)
             if (this.$refs.management)

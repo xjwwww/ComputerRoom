@@ -85,9 +85,10 @@ export default {
             activeName:'preview',
             channels:[],
             windowNumber:2,
-            g_iWndIndex: 0,//当前选中的窗口
-
-            g_bPTZAuto: false,//云台控制
+            //当前选中的窗口
+            g_iWndIndex: 1,
+            //云台控制
+            g_bPTZAuto: false,
             iWidth: 680,
             iHeight: 350
         }
@@ -95,7 +96,7 @@ export default {
     watch:{
         // 监听窗口分割数
         windowNumber(newVal, oldVal){
-            console.log('windowNumber新值: '+newVal+', windowNumber旧值: '+oldVal)
+            // console.log('windowNumber新值: '+newVal+', windowNumber旧值: '+oldVal)
             this.changeWndNum(newVal)
 
             this.$store.commit('system/UPDATE_ITYPE', {newVal: newVal, oldVal: oldVal})
@@ -107,10 +108,10 @@ export default {
         query.getAccount()
         .then(data=>{
             this.account=data
-            console.log(this.account)
+            // console.log(this.account)
         })
         .then(()=>{
-            
+
             this.videoInitPlugin()
             this.login()
         })
@@ -134,6 +135,11 @@ export default {
         'video-account':VideoAccount
     },
     methods:{
+         ScreenWidth(val, initWidth = 1280){
+            //获取当前设备的的宽度
+            let nowClientWidth = window.innerWidth;
+            return val * (nowClientWidth / initWidth);
+         },
         // 刷新
         refresh(){
             this.logout()
@@ -147,10 +153,11 @@ export default {
         // 登录 
         login() {
             //console.log("login(149行：)"+this.account)
+            // console.log(this.account.szIP)
             var iRet = WebVideoCtrl.I_Login(this.account.szIP, 1, this.account.szPort, this.account.szUsername, this.account.szPassword, {
                 async:false,
                 success: (xmlDoc)=> {
-                    console.log('登录成功')
+                    // console.log('登录成功')
                     //console.log(xmlDoc)
                     setTimeout( ()=> {
                         this.getChannelInfo()
@@ -209,15 +216,16 @@ export default {
             }
 
             // 模拟通道 this.szDeviceIdentify
-            WebVideoCtrl.I_GetAnalogChannelInfo(this.account.szIP + "_" + this.account.szPort, {
+            // +"_" + this.account.szPort
+            WebVideoCtrl.I_GetAnalogChannelInfo(this.account.szIP,{
                 async: false,
                 success:  (xmlDoc)=> {
                     //console.log(xmlDoc)
-                    console.log('获取模拟通道成功')
+                    // console.log('获取模拟通道成功')
                 },
                 error: (status, xmlDoc)=> {
                     //console.log(status, xmlDoc)
-                    notifyMaker(" 获取模拟通道失败！")
+                    // notifyMaker(" 获取模拟通道失败！")
                 }
             })
             // 数字通道
@@ -227,7 +235,7 @@ export default {
                     digitalChannels.splice(21,1)
                     //console.log(digitalChannels)
                     this.channels.push(...digitalChannels)
-                    console.log('获取数字通道成功')
+                    // console.log('获取数字通道成功')
                 },
                 error:  (status, xmlDoc) =>{
                     notifyMaker(" 获取数字通道失败！")
@@ -237,7 +245,7 @@ export default {
             WebVideoCtrl.I_GetZeroChannelInfo(this.szDeviceIdentify, {
                 async: false,
                 success:  (xmlDoc)=> {
-                    console.log('获取零通道成功')
+                    // console.log('获取零通道成功')
                 },
                 error:  (status) =>{
                     notifyMaker(" 获取零通道失败！")
@@ -256,19 +264,18 @@ export default {
             }
             this.initPlugin()
         },
-
-        // 初始化视频插件
         initPlugin(){
-
+            var that = this
             // 初始化插件的各种属性
-            WebVideoCtrl.I_InitPlugin(this.iWidth, this.iHeight, {
-                bWndFull: true,//是否支持单窗口双击全屏，默I_CheckPluginInstall
+            WebVideoCtrl.I_InitPlugin(this.ScreenWidth(680), this.ScreenWidth(350), {
                 iWndowType: 2, //分屏类型：1- 1*1，2- 2*2，3- 3*3，4- 4*4，默认值为 1，单画面
-                //szColorProperty:"plugin-background:cccccc; sub-background:cccccc; sub-border:ffffff; sub-border-select:ffff00",
-                // 打印选择的窗口
-                cbSelWnd: (xmlDoc)=> {
-                    //console.log('xmlDoc'+xmlDoc)
-                    this.g_iWndIndex = parseInt($(xmlDoc).find("SelectWnd").eq(0).text(), 10)
+                bWndFull: true,//是否支持单窗口双击全屏，默I_CheckPluginInstall
+                iPackageType: 2, 
+                // szColorProperty:"plugin-background:cccccc; sub-background:cccccc; sub-border:ffffff; sub-border-select:ffff00",
+                // 窗口选中事件
+                 cbSelWnd: function(xmlDov) {
+                    // console.log('xmlDoc'+xmlDoc)
+                    that.g_iWndIndex = xmlDov
                 },
                 // 初始化窗口以及检查版本
                 cbInitPluginComplete: () =>{

@@ -22,6 +22,8 @@
                         主页
                     </router-link>
                 </div>
+
+                <!-- 这里是显示物联系统的头部信息 -->
                 <router-link :to="item.urlAddress" class="ctm-navibar-item ctm-navibar-item_middle" v-slot="{isActive}"  v-for="item in monitoringItem" :key="item.name" v-popover="item.key">
                     <a class="ctm-navibar-item__href ctm-navibar-item__href_middle" :class="isActive && 'ctm-navibar-item__href_active'">
                         {{item.name}}
@@ -35,7 +37,7 @@
                 placement="top"
                 trigger="hover"
                 width="150"
-              >
+               >
                 <div class="tips-content">
                     <div  v-for="(item, index) in Text" :key="item.name" @click="jump(item.path,index)" >
                         <img :src="item.src"/>
@@ -57,7 +59,7 @@
                     </a>
                 </div>
 
-                <div class="ctm-navibar-item ctm-navibar-item_right">
+                <div class="ctm-navibar-item ctm-navibar-item_right" style="display: none;">
                     <router-link to="/systems"  title="选择系统" tag="a" class="ctm-navibar-item__href ctm-navibar-item__href_right">
                         <i class="el-icon-setting"></i>
                     </router-link>
@@ -84,57 +86,7 @@
                 </div>
             </div>
         </nav>
-
-        <!-- <el-dialog title="查看个人信息" :visible.sync="dialogVisible" width="520px" center custom-class="ctm-dialog">
-            <el-form :model="personInfo" label-width="80px" size="small">
-                <el-form-item label="用户名">
-                    <el-input v-model="personInfo.username" type="text"></el-input>
-                </el-form-item>
-                <el-form-item label="旧密码">
-                    <el-input ref="oldPassword" type="password"></el-input>
-                </el-form-item>
-                <el-form-item label="新密码">
-                    <el-input ref="newPassword" type="password"></el-input>
-                </el-form-item>
-                <el-form-item label="确认密码">
-                    <el-input ref="confirmPassword" type="password"></el-input>
-                </el-form-item>
-                <el-form-item label="联系电话">
-                    <el-input v-model="personInfo.telephone" type="tel"></el-input>
-                </el-form-item>
-                <el-form-item label="邮箱">
-                    <el-input v-model="personInfo.email" type="email"></el-input>
-                </el-form-item>
-                <el-form-item label="角色类型">
-                    <el-radio-group v-model="personInfo.role">
-                        <el-radio :label="2">用户</el-radio>
-                        <el-radio :label="1">管理员</el-radio>
-                        <el-radio :label="0">超级管理员</el-radio>
-                    </el-radio-group>
-                </el-form-item>
-                <el-form-item label="工作日">
-                    <el-checkbox-group v-model="personInfo.workday" size="mini">
-                        <el-checkbox-button label="周一" :key="1"></el-checkbox-button>
-                        <el-checkbox-button label="周二" :key="2"></el-checkbox-button>
-                        <el-checkbox-button label="周三" :key="3"></el-checkbox-button>
-                        <el-checkbox-button label="周四" :key="4"></el-checkbox-button>
-                        <el-checkbox-button label="周五" :key="5"></el-checkbox-button>
-                        <el-checkbox-button label="周六" :key="6"></el-checkbox-button>
-                        <el-checkbox-button label="周日" :key="7"></el-checkbox-button>
-                    </el-checkbox-group>
-                </el-form-item>
-            </el-form> -->
-
-            <!-- <span slot="footer" class="dialog-footer">
-                <div style="width:50%;">
-                    <button @click="dialogVisible = false" class="create">确 定</button>
-                </div>
-                <div style="width:50%;">
-                    <button @click="dialogVisible = false" class="cancel">取 消</button>
-                </div>
-            </span>
-        </el-dialog> -->
-        <person-info-dialog ref="personDialog"></person-info-dialog>
+        <person-info-dialog ref="personDialog"></person-info-dialog> 
     </div>
 </template>
 <script>
@@ -185,13 +137,16 @@ export default {
           dynamicRoutes.push(newRoute);
         });
       });
+      //[...dynamicRoutes]把路由添加到router中
       this.$router.addRoutes([...dynamicRoutes]);
     },
     async checkAuth(auth) {
       if (!this.roles) await this.$store.dispatch("role/updateRole");
-      for (let i = auth.length - 1; i >= 0; i--)
-        if (this.roles.includes(auth[i])) return true;
-      return false;
+      if(typeof this.roles !== "undefined"){
+        for (let i = auth.length - 1; i >= 0; i--)
+            if (this.roles.includes(auth[i])) return true;
+          return false;
+      }
     },
     checkAuthSync(auth, roles) {
       // if(!this.roles)
@@ -258,11 +213,13 @@ export default {
           devices.forEach(device => {
             if (!device.visible) return;
             if (device.auth) {
-              let result = this.checkAuthSync(
-                device.auth,
-                this.$store.getters.roles
-              );
-              if (!result) return;
+              if(typeof this.roles !== "undefined"){
+                 let result = this.checkAuthSync(
+                  device.auth,
+                  this.roles
+                );
+                if (!result) return;
+              }
             }
             let newDevice = {
               name: device.name,
@@ -275,10 +232,6 @@ export default {
         });
         return items;
       }
-      // set:function(){
-      //     console.log(111)
-      //     this.initRoute(this.menu)
-      // }
     }
   },
   components: {

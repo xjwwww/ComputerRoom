@@ -11,7 +11,7 @@
                     {{humidity}}
                 </div>
                 <div class="precision-value-circle__description">
-                    湿度过低
+                    湿度
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     {{temperature}}
                 </div>
                 <div class="precision-value-circle__description">
-                    温度过低
+                    温度
                 </div>
             </div>
         </div>

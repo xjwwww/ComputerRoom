@@ -4,11 +4,38 @@ const webpackBase = require("./webpack.config.base");
 // 引入 webpack-merge 插件
 const webpackMerge = require("webpack-merge");
 
+
+const os = require('os');
+
+function getNetworkIp() {
+    let needHost = ''; // 打开的host
+    try {
+        // 获得网络接口列表
+        let network = os.networkInterfaces();
+        for (let dev in network) {
+            let iface = network[dev];
+            for (let i = 0; i < iface.length; i++) {
+                let alias = iface[i];
+                if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+                    needHost = alias.address;
+                }
+            }
+        }
+    } catch (e) {
+        needHost = 'localhost';
+    }
+    console.log(needHost)
+    return needHost;
+}
+
+
+
 // 合并配置文件
 module.exports = webpackMerge(webpackBase, {
     mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, "../dist"), //网站的根目录为 根目录/dist，如果配置不对，会报Cannot GET /错误
+        host: getNetworkIp(),
         port: 9000, //端口改为9000
         // host:'192.168.3.16',
         disableHostCheck: true,
@@ -19,7 +46,8 @@ module.exports = webpackMerge(webpackBase, {
             '/software': {
                 // target: 'http://192.168.1.253:8080/software', //目标接口域名
                 target: 'https://www.kitozer.net:9000/software', //目标接口域名
-                // target: 'http://192.168.1.42:8080/software/', //目标接口域名
+                // target: 'http://localhost:8080/software/', //目标接口域名
+                // target: 'http://192.168.1.42:8080/software/',
                 changeOrigin: true, //是否跨域
                 pathRewrite: {
                     '^/software': '' //重写接口

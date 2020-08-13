@@ -5,6 +5,7 @@
                 <div class="table-operation__row">
                     <div class="table-operation__name">条件搜索</div>
                     <div class="table-operation__item">
+                        <!-- 子组件 -->
                         <el-cascader v-model="selectedIds" :options="groupsNode" :props="cascaderProps" size="mini" placeholder="请选择设备" style="margin-left: 18px;" :show-all-levels="true">
                             <template slot-scope="{ node, data }">
                                 <i class="el-icon-s-tools" v-if="data.deviceId"></i>
@@ -155,7 +156,7 @@
                     node.leaf=true
                 return node
             }
-        },
+        }
     }
 </script>
 <style>

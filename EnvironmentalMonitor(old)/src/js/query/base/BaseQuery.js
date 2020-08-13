@@ -49,7 +49,6 @@ const BaseQuery = class {
             .then(
                 data => {
                     // let datas = Array.from(data)
-                    console.log(data)
                     if (transform)
                         return data.map(element => transform(element))
                             // return data.map(element => dataTransform(this.transformFormat.status, element))

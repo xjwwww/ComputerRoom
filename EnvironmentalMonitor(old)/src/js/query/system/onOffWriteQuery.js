@@ -1,6 +1,5 @@
 import { service } from '../../request/request.js'
 import { Message } from 'element-ui'
-import { data } from 'jquery'
 // import { data } from 'jquery'
 
 var getDevice = function() {

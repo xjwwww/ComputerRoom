@@ -61,8 +61,6 @@ Vue.mixin(permissionMixin)
 
 
 router.beforeEach(async(to, from, next) => {
-    // console.log(to.path)
-
     if (to.path != "/login.html") {
         if (sessionStorage.token) {
 
