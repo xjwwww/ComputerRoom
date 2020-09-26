@@ -66,7 +66,8 @@
             { "name": "门磁监控", "key": "door", "visible": 1 },
             { "name": "视频监控", "key": "video", "visible": 1 },
             { "name": "电缆监控", "key": "Cable", "visible": 1 },
-            { "name": "电气火灾", "key": "Electrical", "visible": 1 }
+            { "name": "电气火灾", "key": "Electrical", "visible": 1 },
+            { "name": "门禁监控", "key": "Access", "visible": 1 }
         ]
     },
     {

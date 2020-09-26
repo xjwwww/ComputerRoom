@@ -22,7 +22,7 @@ var deviceDecomposition = function({ id, diId, gId, name, gallery, address, kId,
         name,
         deviceTypeId: kId,
         ipId: diId,
-        groupId: gId,
+        groupId: gId + 1,
         status,
     }
 }
@@ -44,7 +44,6 @@ var updateDevice = function(object) {
 }
 
 var deviceInDecomposition = function({ deviceId, name, address, channel, ipId, deviceTypeId, groupId }) {
-    // console.log("调用了deviceInDecomposition---")
     return {
         id: deviceId,
         name,
@@ -95,9 +94,10 @@ var getDevicesByDeviceTypeId = function(deviceTypeId) {
                 method: 'get',
                 url: `/software/ktr8060/find8060ByDevice/${deviceTypeId}`
             })
-            .then(data =>
-                data.map(element => deviceDecomposition(element))
-            )
+            .then(data => {
+                // console.log(data)
+                return data.map(element => deviceDecomposition(element))
+            })
     }
     // 查询8060设备（ 散热或者门磁）
 var getDevicesByDeviceTypeIds = function(kId) {
@@ -106,7 +106,11 @@ var getDevicesByDeviceTypeIds = function(kId) {
             url: `/software/ktr8060/findKtr8060ManageByKid?kId=` + kId,
         })
         .then(data =>
-            data.map(element => deviceDecomposition(element))
+            // data.map(element => deviceDecomposition(element))
+            {
+                // console.log(data.map(element => deviceDecomposition(element)));
+                return data.map(element => deviceDecomposition(element))
+            }
         )
 }
 

@@ -18,8 +18,11 @@ function initGroupsReflect(item, groupsReflect) {
 
 const addDeviceToGroup = function(devices, groupsArray) {
     Object.values(devices).forEach(element => {
-        if (!groupsArray[element.groupId].devices)
+        if (!groupsArray[element.groupId].devices) {
             groupsArray[element.groupId].devices = []
+        }
+        // console.log(element)
+        // groupsArray[element.groupId].devices = []
         groupsArray[element.groupId].devices.push(element)
         element.groupName = groupsArray[element.groupId].name
     })
@@ -54,6 +57,7 @@ const deepClone = function(obj, parent = null) {
     return result
 }
 
+//时间
 const timeFormatTransform = function(t1) {
     let year = t1.getFullYear()
     let month = t1.getMonth() + 1
@@ -105,9 +109,12 @@ const floatPass = (rule, value, callback) => {
 const build = function() {
     Promise.all([this.getDevices(), this.$store.dispatch('group/updateGroups', true)])
         .then(() => {
+            // console.log(this.devices)
             this.groups = deepClone(this.$store.getters.groups)
+                // console.log(this.groups);
             initGroupsReflect(this.groups[0], this.groupsReflect) //不能放在store的getters中，否则与grooups中的数据不是同一个地址
-            addDeviceToGroup(this.devices, this.groupsReflect)
+                // console.log(this.groupsReflect);
+                // addDeviceToGroup(this.devices, this.groupsReflect)
                 //根据vue中$.refs绑定虚拟dom，挂载元素
             this.$refs.deviceExhibition.selectedDevices = Object.values(this.devices)
             if (this.$refs.management)
@@ -144,8 +151,10 @@ const dataTransform = function(format, variable, reverse) {
         inIndex = 0
         outIndex = 1
     }
-    for (let i = format.length - 1; i >= 0; i--)
+    for (let i = format.length - 1; i >= 0; i--) {
         result[format[i][outIndex]] = variable[format[i][inIndex]]
+            // console.log(format[i][inIndex])
+    }
     return result
 }
 

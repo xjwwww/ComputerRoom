@@ -26,11 +26,12 @@ const BaseQuery = class {
             })
             .then(
                 data => {
-                    //console.log(data)
-                    if (transform)
+                    // console.log(data)
+                    if (transform) {
                         return data.map(element => transform(element))
+                    }
                     if (Array.isArray(data)) {
-
+                        // console.log(this.transformFormat.device)
                         return data.map(element => dataTransform(this.transformFormat.device, element))
                     } else {
                         let arr = [];
@@ -48,6 +49,7 @@ const BaseQuery = class {
             })
             .then(
                 data => {
+                    // console.log(data)
                     // let datas = Array.from(data)
                     if (transform)
                         return data.map(element => transform(element))

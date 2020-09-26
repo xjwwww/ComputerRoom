@@ -197,8 +197,8 @@ export default {
         getTemperature(){
             return HomepageQuery.getDevices()
             .then(data => {
-                //console.log(data)
-                this.temperature = data
+                console.log(data)
+                this.temperature = data.AvgTemperature
             })
         }
 

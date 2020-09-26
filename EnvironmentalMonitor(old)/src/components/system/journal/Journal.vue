@@ -26,16 +26,14 @@
             </div>
           </div>
 
-          <el-table :data="journalToBeShown" id="journalTable" border style="width: 100%" size="mini" height="calc(100% - 115px)">
+          <el-table :data="journals" id="journalTable" border style="width: 100%" size="mini" height="calc(100% - 115px)">
             <el-table-column prop="username" label="用户名" min-width="70" align="center" head-align="center" :filters="usernameList" :filter-method="filterUsername"></el-table-column>
             <el-table-column prop="operationType" label="事件类型" min-width="110" align="center" head-align="center" :filters="operationTypeList" :filter-method="filterOperationType"></el-table-column>
-            <!-- <el-table-column prop="username" label="用户名" min-width="70" align="center" head-align="center"  ></el-table-column>
-            <el-table-column prop="operationType" label="事件类型" min-width="110" align="center" head-align="center" ></el-table-column> -->
             <el-table-column prop="operationName" label="事件描述"  min-width="50" align="center" head-align="center"></el-table-column>
-            <el-table-column prop="time" label="时间"  min-width="60" align="center" head-align="center"></el-table-column>
+            <el-table-column prop="createDate" label="时间"  min-width="60" align="center" head-align="center"></el-table-column>
           </el-table>
         </div>
-        <base-table-pagination :total="journalToBeFiltered.length" :pageSize.sync="pageSize"  :currentPage.sync="currentPage"></base-table-pagination>
+        <daybase-table-pagination :total="journalsData.total" :pageSize.sync="pageSize"  :currentPage.sync="currentPage" :startTinme="queryTime[0]" :endTinme='queryTime[1]' @changePage='pageData'></daybase-table-pagination>
       </div>
     </div>
   </div>
@@ -53,6 +51,7 @@ export default {
       pageSize:10,
       currentPage:1,
       journals:[],
+      journalsData:[],
       operationTypeList:[
         {text:'查询操作',value:'查询操作'},
         {text:'修改操作',value:'修改操作'},
@@ -64,15 +63,8 @@ export default {
   },
   computed:{
     journalToBeFiltered(){
-      return this.journals.filter(journal=>
-        {
-          for(let i in journal){
-            if(journal[i].toString().indexOf(this.keyword)!=-1)
-              return true
-          }
-          return false
-        }
-      )
+      
+      return this.journals
     },
     journalToBeShown(){
       return this.journalToBeFiltered.slice((this.currentPage-1)*this.pageSize,this.currentPage*this.pageSize)
@@ -89,6 +81,10 @@ export default {
     },
   },
   methods:{
+    pageData(v){
+      console.log(v.sysLog.list)
+         this.journals=v.sysLog.list
+    },
     refresh(){
       this.getJournal(this.queryTime[0],this.queryTime[1])
     },
@@ -100,10 +96,12 @@ export default {
     },
     getJournal(startTime,endTime){
       let loadingInstance=this.$loading.service({target:'#journalTable'})
-      return query.getJournals({startTime,endTime})
+      return query.getJournals({startTime,endTime},this.pageSize,this.currentPage)
       .then(data=>{
           loadingInstance.close()
-          this.journals=data
+         this.journalsData =data
+         console.log(this.journalsData)
+          this.journals=data.sysLog.list
         }
       )
       .then(()=>
@@ -120,6 +118,7 @@ export default {
         }
       })
     },
+    //导出
     getJournalExcel(){
       if(this.loading){
           this.$message.warning("数据正在加载，请请稍后再操作")

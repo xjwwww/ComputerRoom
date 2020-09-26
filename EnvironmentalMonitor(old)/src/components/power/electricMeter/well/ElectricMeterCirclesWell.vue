@@ -1,13 +1,13 @@
 <template>
     <div class="electric-meter-circles-well">
         <!-- <div class="circles-row"> -->
-            <electric-meter-value-circle :canvasInfo="lineABCanvas" :param="linePowerData.lineABvoltage"></electric-meter-value-circle>
-            <electric-meter-value-circle :canvasInfo="lineBCCanvas" :param="linePowerData.lineBCvoltage"></electric-meter-value-circle>
+            <!-- <electric-meter-value-circle :canvasInfo="lineABCanvas" :param="linePowerData.lineABvoltage"></electric-meter-value-circle>
+            <electric-meter-value-circle :canvasInfo="lineBCCanvas" :param="linePowerData.lineBCvoltage"></electric-meter-value-circle> -->
         <!-- </div> -->
 
         <!-- <div class="circles-row"> -->
-            <electric-meter-value-circle :canvasInfo="lineCACanvas" :param="linePowerData.lineCAvoltage"></electric-meter-value-circle>
-            <electric-meter-value-circle :canvasInfo="totalPowerCanvas" :param="linePowerData.totalPowerFactor"></electric-meter-value-circle>
+            <!-- <electric-meter-value-circle :canvasInfo="lineCACanvas" :param="linePowerData.lineCAvoltage"></electric-meter-value-circle>
+            <electric-meter-value-circle :canvasInfo="totalPowerCanvas" :param="linePowerData.totalPowerFactor"></electric-meter-value-circle> -->
         <!-- </div> -->
 
         <!-- <div class="circles-row"> -->
@@ -60,7 +60,7 @@ export default {
             reactivePowerCanvas:{
                 maximum:110,
                 step:0.1,
-                name:'总无功功率',
+                name:'总有功电量',
                 unit:'W',
                 circleStyle:{
                     color:'rgb(138,195,248)'

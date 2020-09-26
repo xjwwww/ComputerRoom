@@ -152,7 +152,9 @@ const register = {
     //电气火灾
     Electrical: () =>
         import ('./security/Electrical/Electrical.vue'),
-
+    //门禁监控
+    Access: () =>
+        import ('./security/Access/Access.vue'),
     // water水质监控
     // 氨气
     ammonia: () =>

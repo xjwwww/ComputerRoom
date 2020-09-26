@@ -2,7 +2,8 @@
     <div class="manage-table-operation">
         <div class="manage-table-operation__part table-operation__part_position_left">
             <button type="button" class="manage-table-operation__button manage-table-operation__button_function_refresh" @click="refresh">刷新</button>
-            <button type="button" class="manage-table-operation__button manage-table-operation__button_function_export" @click="openDialog" v-if="hasPermission">新增</button>
+            <button type="button" class="manage-table-operation__button manage-table-operation__button_function_export" @click="openDialog">新增</button>
+            <!-- v-if="hasPermission" -->
         </div>
         <div class="manage-table-operation__part table-operation__part_position_right">
             <div class="search-keyword"> 

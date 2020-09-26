@@ -24,7 +24,6 @@ function getNetworkIp() {
     } catch (e) {
         needHost = 'localhost';
     }
-    console.log(needHost)
     return needHost;
 }
 

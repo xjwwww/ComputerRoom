@@ -29,9 +29,9 @@
             getDevices(){
                 return query.getDevicesByDeviceTypeId(2)
                 .then(data=>{
-                        // this.devices=data
-                        // this.devices.forEach(element=>this.devicesReflect[element.deviceId]=element)
-                        data.forEach(element=>this.devices[element.deviceId]=element)
+                     data.forEach(element=>this.devices[element.deviceId]=element)
+                    //   data.forEach(element=>{console.log(element)})
+                    //  this.devices.forEach(element=>this.devicesReflect[element.deviceId]=element)
                     }
                 )
             },

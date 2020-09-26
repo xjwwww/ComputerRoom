@@ -1,13 +1,5 @@
 <template>
     <a class="monitor-device" :href="href" @click="navigate">
-        <!-- <div class="monitor-device-circle">
-            <div class="monitor-device-circle__part monitor-device-cicle__part_left"></div>
-            <div class="monitor-device-circle__part monitor-device-cicle__part_right"></div>
-            <div class="monitor-device-circle__center"></div>
-        </div> -->
-        <!-- <div :class="['monitor-device__icon','antiThunder']"> -->
-            <!-- <img src="../../img/temperature.png" height="100%"/> -->
-        <!-- </div> -->
         <div class="monitor-device__icon">
             <img :src="isActive?activeImgObj:imgObj" height="100%">
         </div>

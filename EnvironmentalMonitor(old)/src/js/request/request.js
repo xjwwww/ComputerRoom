@@ -25,7 +25,7 @@ const service = axios.create({
 //请求拦截器
 service.interceptors.request.use(function(config) {
     // 处理请求之前的配置
-    config.headers["token"] = "616e15a362285a2a14a0d4ea8b2f091a"
+    config.headers["token"] = sessionStorage.getItem("NewToken")
     return config
 }, function(error) {
     // 请求失败的处理

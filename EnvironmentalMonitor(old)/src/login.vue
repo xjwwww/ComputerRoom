@@ -1,8 +1,8 @@
 <template>
     <div class="ctm-body login-body">
-        <div class="login-logo">
+        <!-- <div class="login-logo">
             <img src="./img/login/logo.svg" alt="">
-        </div>
+        </div> -->
         <div class="login-container">
             <div class="login-container__content">
                 <img src="./img/login/view/embellish.png" class="login-embellish">
@@ -10,7 +10,7 @@
             <div class="login-container__content">
                 <div class="sigin-container">
                     <div>
-                        <h3 style="color:rgb(79, 168, 245);margin-top:10px;">机房综合监控智慧平台</h3>
+                        <h3 style="color:rgb(79, 168, 245);margin-top:10px;">综合机柜人机交互系统</h3>
                         <p style="color: gray">使机房管理变得更便捷、更智能！</p>
                     </div>
 
@@ -35,11 +35,11 @@
                 </div>
             </div>
         </div>
-        <div class="company-name">
+        <!-- <div class="company-name">
             广州莱安智能化系统开发有限公司
             <br>
             http://lain.com.cn/cn/
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -61,9 +61,10 @@ export default {
         checkLogin(){
             this.query.login(this.account,this.password)
             .then(result=>{
-                if(result==='ok'){
+                if(result.zt==='ok'){
                     let name=encodeName(this.account)
                     sessionStorage.setItem('token',name)
+                     sessionStorage.setItem('NewToken',result.token)
                     window.location.href=this.fromPath
                     return
                 }

@@ -19,6 +19,7 @@ import router from '../router'
 import monitorpage from '../../monitorpage.vue'
 
 // 全局注册常用组件
+import BaseDeviceAccess from '@/components/base/tab/baseDeviceAccess/baseDeviceAccess.vue'
 import BaseDeviceExhibition from '@/components/base/tab/baseDeviceExhibition/BaseDeviceExhibition.vue'
 import BaseLargeDeviceExhibition from '@/components/base/tab/baseLargeDeviceExhibition/BaseLargeDeviceExhibition.vue'
 import BaseMiddleDeviceExhibition from '@/components/base/tab/baseMiddleDeviceExhibition/BaseMiddleDeviceExhibition.vue'
@@ -27,8 +28,11 @@ import BaseHistoryInquiry from '@/components/base/tab/baseHistoryInquiry/BaseHis
 
 import BaseGroupSidetree from '@/components/base/element/baseGroupSidetree/BaseGroupSidetree.vue'
 import BaseTablePagination from '@/components/base/element/baseTablePagination/BaseTablePagination.vue'
+import DayBaseTablePagination from '@/components/base/element/dayBaseTablePagination/DayBaseTablePagination.vue'
 import BaseManageTableOperation from '@/components/base/element/baseManageTableOperation/BaseManageTableOperation.vue'
 
+//这里使用base
+Vue.component('base-device-access', BaseDeviceAccess)
 Vue.component('base-device-exhibition', BaseDeviceExhibition)
 Vue.component('base-large-device-exhibition', BaseLargeDeviceExhibition)
 Vue.component('base-middle-device-exhibition', BaseMiddleDeviceExhibition)
@@ -38,6 +42,7 @@ Vue.component('base-history-inquiry', BaseHistoryInquiry)
 Vue.component('base-management-table-operation', BaseManageTableOperation)
 Vue.component('base-group-sidetree', BaseGroupSidetree)
 Vue.component('base-table-pagination', BaseTablePagination)
+Vue.component('daybase-table-pagination', DayBaseTablePagination)
 
 
 //vue混入

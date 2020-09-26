@@ -79,6 +79,7 @@
 import {initGroupsReflect,addDeviceToGroup,deepClone} from '@/js/util/util.js'
 import query from '../js/ipQuery.js'
 
+
 export default {
     data(){
         var ipAddressPass = (rule, value, callback) => {
@@ -214,6 +215,7 @@ export default {
             return query.getDevices()
             .then(data=>{
                     this.devices=data //一开始显示所有设备，默认树控件中的“全部”被选中
+                    console.log(data);
                 }
             )
         },
@@ -243,7 +245,7 @@ export default {
                 }
             )
         },
-        deviceSettingsToBeShown(){
+        deviceSettingsToBeShown(){1
             return this.deviceSettingsToBeFiltered.slice((this.currentPage-1)*this.pageSize,this.currentPage*this.pageSize)
         }
     },

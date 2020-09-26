@@ -152,8 +152,6 @@ export default {
         },
         // 登录 
         login() {
-            //console.log("login(149行：)"+this.account)
-            // console.log(this.account.szIP)
             var iRet = WebVideoCtrl.I_Login(this.account.szIP, 1, this.account.szPort, this.account.szUsername, this.account.szPassword, {
                 async:false,
                 success: (xmlDoc)=> {

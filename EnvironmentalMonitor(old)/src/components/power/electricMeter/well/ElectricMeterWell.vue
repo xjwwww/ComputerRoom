@@ -23,15 +23,15 @@ export default {
             phaseA:{
                 name:'A相',
                 className:'a-phase'
-            },
-            phaseB:{
-                name:'B相',
-                className:'b-phase'
-            },
-            phaseC:{
-                name:'C相',
-                className:'c-phase'
             }
+            // phaseB:{
+            //     name:'B相',
+            //     className:'b-phase'
+            // },
+            // phaseC:{
+            //     name:'C相',
+            //     className:'c-phase'
+            // }
         }
     },
     props:['device'],

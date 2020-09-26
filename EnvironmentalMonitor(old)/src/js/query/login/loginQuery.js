@@ -7,9 +7,8 @@ const login = function(username, password) {
             url: '/software/login',
             data: qs.stringify({ username, password })
         })
-        .then(
-            ({ zt }) => zt
-        )
+        .then((res) => res)
+        // ({ zt }) => zt
 }
 
 export default {

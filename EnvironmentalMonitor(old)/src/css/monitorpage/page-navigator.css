@@ -53,6 +53,7 @@
 .ch-name {
     font-size: 1.125em;
     font-weight: 600;
+    margin: auto
 }
 
 .ctm-navibar__middle,
@@ -114,7 +115,7 @@
 .monitor-item-pop__list::-webkit-scrollbar-thumb {
     /*滚动条里面小方块*/
     border-radius: 1px;
-    -webkit-box-shadow: inset 0 0 5px rgb(128, 128, 128);
+    /* -webkit-box-shadow: inset 0 0 5px rgb(128, 128, 128); */
     background: gray;
 }
 
